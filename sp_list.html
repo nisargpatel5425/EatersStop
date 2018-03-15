@@ -19,6 +19,64 @@
     .collapsible-body{
       padding-top: 0px
     }
+    #shape-change{
+       width: 330px;
+       height: 330px;
+       background-color: #f0f0f0;
+       color: #000;
+       margin-top: 2%;
+       margin-bottom: 2%;
+
+  }
+  .col{
+    text-align: center;
+  }
+
+    a:hover{
+      color: #fff;
+
+    }
+
+    #shape-change:hover{
+       /*width: 256px;*/
+      /*height: 384;*/
+      border-radius: 50%;
+      background: #5cb7ae;
+       margin-top: 2%;
+       margin-bottom: 2%;
+
+       color: #fff;
+
+       animation-name: circle; 
+       animation-delay: 0s;
+       animation-duration: 0.5s;
+      
+    }
+    @-webkit-keyframes circle {
+    from {border-radius: 0px;}
+    to {border-radius: 200px;}
+}
+
+/* Standard syntax */
+@keyframes circle {
+    from {border-radius: 0px;}
+    to {border-radius: 200px;}
+}
+
+.dis
+{
+  margin-left:5% !important;
+}
+@media only screen and (max-width: 600px){
+.dis {
+    margin-left: 0px !important;
+}
+#shape-change{
+  width: 100%;
+  height: 267px;
+}
+}
+ 
   </style>
 </head>
 <body>
@@ -57,9 +115,10 @@
   </nav>
    <center></center>
 
+<div class="container row" id="list_manage" style="width: 90% ">
 
-  <div class="row container" id="list_manage" style="margin-top: 5%;">
-<h2 class="header">Service Provider List</h2>
+  <!-- <div class="row container" id="list_manage" style="margin-top: 5%;"> -->
+  <h2 class="header">Service Provider List</h2>
 
   </div>
 
@@ -151,7 +210,7 @@ function testJS() {
 function testJSP(E) {
  
     var b = E;
-        url = 'profile.html?name=' + encodeURIComponent(b);
+        url = 'profile_sp.html?name=' + encodeURIComponent(b);
 
     document.location.href = url;
 }
@@ -199,13 +258,15 @@ function list_retrieve(){
            var servicename = obj.service_name;
            var email = obj.Email;
            var Uid = obj.Uid;
-           // var emailname = obj.Email;
-        // alert(servicename);
-        $('#list_manage').append("<div class=\"col s4 m4\"><div class=\"card horizontal\"><div class=\"card-image\"><img src=\"https://lorempixel.com/100/190/nature/6\"></div><div class=\"card-stacked\"><div class=\"card-content\"><p>"+servicename+".</p></div><div class=\"card-action\"><a href=\"#\" onclick=\"testJSP('"+Uid+"')\">This is a link</a></div></div></div></div>");
-      });
+           
+        // $('#list_manage').append("<div class=\"col s4 m4\"><div class=\"card horizontal\"><div class=\"card-image\"><img src=\"https://lorempixel.com/100/190/nature/6\"></div><div class=\"card-stacked\"><div class=\"card-content\"><p>"+servicename+".</p></div><div class=\"card-action\"><a href=\"#\" onclick=\"testJSP('"+Uid+"')\">This is a link</a></div></div></div></div>");
+
+        // $('#list_manage').append("<div  id=\"shape-change\" class=\"col s3 m4 dis\" style=\"\"><div style=\"text-align: center; padding-top: 50%;\"><h5>"+servicename+"</h5><div><button class=\"btn waves-effect waves-light\" type=\"submit\" name=\"action\" onclick=\"testJSP('"+Uid+"')\">View Details<i class=\"material-icons right\">send</i></button></div></div></div>");
+
+        $('#list_manage').append("<div  id=\"shape-change\" class=\"col s3 m4 dis\" style=\"\"><div style=\"text-align: center; padding-top: 50%;\"><h5>"+servicename+"</h5><div style=\"text-align: center; padding-left: 30%;\"><a class=\"col \" onclick=\"testJSP('"+Uid+"')\">View Details</a></div></div></div>");
+     });
   });
 }
-
 
 
 

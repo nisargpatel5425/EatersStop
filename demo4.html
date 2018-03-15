@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- WEBSITE INFO -->
+  <title>ThadMav | Freelancer For Lean Budgets | Web Development &amp; Copywriting</title>
+  
+  <!-- STYLESHEETS -->
+  <link rel="stylesheet" href="styles2.css">
+  <style type="text/css">
+  	 /* www.thadmav.com css */
+
+/* RESET */
+/*********************************************************************/
+* { box-sizing:border-box; margin:0; padding:0; }
+header, main, footer, section, h1, h2, h3, h4, h5, h6, p, a, img, form, label, input { display:block; }
+
+
+/* HTML & BODY */
+/*********************************************************************/
+html { height:100vh; }
+
+/* Body as three-row, single-column grid */
+body {
+  display:grid;
+  width:100vw;
+  height:100vh;
+  grid-template:repeat(3, 1fr) / 1fr;
+}
+
+
+/* GRIDS */
+/*********************************************************************/
+.one-col-grid { display:grid; grid-template:1fr / 1fr; }
+.two-col-grid { display:grid; grid-template:1fr / repeat(2, 1fr); }
+.three-col-grid { display:grid; grid-template:1fr / repeat(3, 1fr); }
+.four-col-grid { display:grid; grid-template:1fr / repeat(4, 1fr); }
+
+
+/* FLEX ROWS, COLUMNS, & UTILITIES */
+/*********************************************************************/
+.flex-row{ display:flex; }
+.flex-col { display:flex; flex-direction:column; }
+
+/* Flex Justification */
+.justify-start { justify-content:flex-start; }
+.justify-center { justify-content:center; }
+.justify-end { justify-content:flex-end; }
+.justify-around { justify-content:space-around; }
+.justify-between { justify-content:space-between; }
+
+/* Flex Item Alignment */
+.align-start { align-items:flex-start; }
+.align-center { align-items:center; }
+.align-end { align-items:flex-end; }
+.align-around { align-items:space-around; }
+.align-between { align-items:space-between; }
+.align-baseline { align-items:baseline; }
+.align-stretch { align-items:stretch; }
+
+
+/* VARIABLES */
+/*********************************************************************/
+:root {
+
+  /* colors */
+  --primary:#59a1d2;
+  --secondary:#464e5f;
+  --tertiary:#b1c3d0;
+  --gray:#eee;
+  --light-secondary:#9799a1;
+  --dark-primary:#0081be;
+
+    /* fonts */
+  --heading-font:'Nunito Sans', sans-serif;
+  --text-font:'Nunito', sans-serif;
+
+  /* border radius */
+  --xs-radius:2px;
+  --s-radius:4px;
+  --m-radius:6px;
+  --l-radius:8px;
+  --xl-radius:10px;
+  --circle-radius:100%;
+}
+
+
+/* FONTS */
+/*********************************************************************/
+/* Import Google Fonts*/
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:700|Nunito:400,400i');
+
+/* Font families  & line heights */
+h1,h2,h3,h4,h5,h6 { font-family:var(--heading-font); }
+p, a, i { font-family:var(--text-font); }
+p { color:var(--secondary);}
+
+/* Font sizes & paddings */
+h1 { font-size:2rem; }
+h2 { font-size:1.5rem; }
+h3 { font-size:1.17rem; }
+h4, p, a, i { font-size:1rem; }
+h5 { font-size:.83rem; }
+h6 { font-size:.67rem; }
+
+/* Font weights */
+h1,h2,h3,h4,h5,h6 { font-weight:700; }
+p, a, i { font-weight: 400; }
+
+/* Sections & Headings */
+
+.section-heading { padding:6rem 0; color:var(--secondary); text-align:center; }
+
+
+/* LINKS */
+/*********************************************************************/
+a { text-decoration:none; }
+
+
+/* IMAGES */
+/*********************************************************************/
+img { width:100%; height:auto; }
+
+
+
+
+
+/* PORTFOLIO SECTION */
+/*********************************************************************/
+/* Image Gallery */
+.gallery {
+  display:grid;
+  grid-template-columns:1fr;
+  grid-gap:.6rem;
+  padding:0 .6rem 6rem .6rem;
+}
+
+.gallery-image { border-radius:.3rem; opacity:0.3; transition:0.6s; }
+
+.gallery-image:hover { opacity:1; border:solid 1px var(--primary); border-radius:100%; }
+
+
+/* MEDIA QUERIES */
+/*********************************************************************/
+@media screen and (min-width:481px) {
+  .navbar-nav { display:block; }
+
+  .services { padding-bottom:6rem; border-bottom:solid 1px var(--tertiary); }
+
+  .services-card { border-radius:.3rem; }
+
+  #service-card2 { margin:0; }
+
+  .gallery { grid-template-columns:1fr 1fr; }
+}
+
+@media screen and (min-width:641px) {
+  .hero-box { width:66.6% ; }
+
+  .services-grid {
+    display:grid;
+    grid-template:auto auto / 1fr 1fr 1fr;
+    grid-gap:.6rem;
+  }
+
+  .hero-box { padding:12% 0; }
+
+  .gallery { grid-template-columns: repeat(3, 1fr); }
+
+  .contact-form { width:66.6%; }
+}
+
+@media screen and (min-width:1024px) {
+  .hero-box { width:45% ; }
+
+  .services-grid { padding:0 6rem; }
+
+  .gallery { padding:0 6rem 6rem 6rem; grid-gap:3rem; }
+
+  .contact-form {
+    width:54%;
+    padding:6rem;
+  }
+
+  .form-submit { margin-top:3rem;}
+}
+  </style>
+</head>
+<body>
+  
+
+  <!-- MAIN -->
+  <main>
+
+    
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+
+      <h1 id="portfolio-heading" class="section-heading">PORTFOLIO</h1>
+
+      <!-- Image Gallery -->
+      <section id="gallery" class="gallery">
+      
+      <div id="gallery-image1" class="gallery-image"  alt="ThadMav Project"></div>
+
+      <img id="gallery-image2" class="gallery-image" src="http://via.placeholder.com/256x256" alt="ThadMav Project"/>
+      
+      <img id="gallery-image3" class="gallery-image" src="http://via.placeholder.com/256x256" alt="ThadMav Project"/>
+      
+      <img id="gallery-image4" class="gallery-image" src="http://via.placeholder.com/256x256" alt="ThadMav Project"/>
+      
+      <img id="gallery-image5" class="gallery-image" src="http://via.placeholder.com/256x256" alt="ThadMav Project"/>
+      
+      <img id="gallery-image6" class="gallery-image" src="http://via.placeholder.com/256x256" alt="ThadMav Project"/>
+
+    </section>
+
+
+  
+    <!-- SCRIPTS -->
+  <script defer src="scripts2.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.4/js/all.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+  // Smooth Scrolling
+$(document).ready(function() {
+  var scrollLink = $('.scroll');
+  scrollLink.click(function(e) {
+    e.preventDefault();
+    $('html, body').animate({
+      scrollTop:$(this.hash).offset().top
+    }, 900)
+  })
+});
+
+</script>
+</body>
+</html>

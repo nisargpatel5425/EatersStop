@@ -18,6 +18,18 @@
     .collapsible-body{
       padding-top: 0px
     }
+    #profileImage{
+      /*position: relative;*/
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: #5cb7ae;
+      font-size: 35px;
+      color: #fff;
+      text-align: center;
+      line-height: 150px;
+      margin: 20px 39%;
+    }
   </style>
 </head>
 <body>
@@ -62,9 +74,11 @@
     </div>
   </nav>
 
-<div class="row card" style="margin-top: 2%;margin-left:5%;margin-right: 5%;box-shadow: 3px 3px 10px 1px;">
+<div class="row card" style="margin-top: 3%;margin-left:5%;margin-right: 5%; margin-bottom: 3%;box-shadow: 3px 3px 10px 1px;">
         <div class="col s6 m6 center" style="margin:5px;background-color: #f4f7f9">
-          <img src="images/d.png" width="30%" height="30%" style="margin-top: 4%;">
+          <!-- <img src="images/d.png" width="30%" height="30%" style="margin-top: 4%;"> -->
+          <div id="profileImage"></div>
+
           <div class="card-title " id="servicename" style="margin-top: 10px;margin-bottom: 10%">Service Provider</div>
         </div>
         <div class="col s6 m5">
@@ -114,7 +128,7 @@
 
 <!-- <div class="row container"><div class="col s10"><div class="input-field"><input id="comment" type="text" class="validate"><label for="comment">Write your Comment</label></div></div><div><button class="btn waves-effect waves-light col s2" type="submit" name="action" style="margin-top: 21px;" onclick="writeComment()">Submit<i class="material-icons right">send</i></button></div></div></div> -->
 
-<div class=" " style="margin-top: 4%;margin-left:5%;margin-right: 5%;box-shadow: 3px 3px 10px 1px;padding: 20px;margin-bottom: 4%">
+<!-- <div class=" " style="margin-top: 4%;margin-left:5%;margin-right: 5%;box-shadow: 3px 3px 10px 1px;padding: 20px;margin-bottom: 4%">
   <div>
     <section class='rating-widget'>
       <div class='rating-stars text-center'>
@@ -137,14 +151,14 @@
         </ul>
       </div>
     </section>
-</div>
+</div> -->
 
-  <div class="row container"><div class="col s10"><div class="input-field"><input id="comment" type="text" class="validate"><label for="comment">Write your Comment</label></div></div><div><button class="btn waves-effect waves-light col s2" type="submit" name="action" style="margin-top: 21px;" onclick="writeComment()">Submit<i class="material-icons right">send</i></button></div></div>
+  <!-- <div class="row container"><div class="col s10"><div class="input-field"><input id="comment" type="text" class="validate"><label for="comment">Write your Comment</label></div></div><div><button class="btn waves-effect waves-light col s2" type="submit" name="action" style="margin-top: 21px;" onclick="writeComment()">Submit<i class="material-icons right">send</i></button></div></div>
 
  <h3 style="padding-bottom: 10px;margin-bottom: 10px; ">Comments</h3>
  <div id="manage_comment" class="">
   </div> 
-  </div>
+  </div> -->
 
 
   <!-- footer -->
@@ -329,6 +343,7 @@ function writeComment() {
 
 function profile_retrieve()
 {
+
   firebase.database().ref('service_provider/').orderByChild("Uid").equalTo(Uid).on("value", function(snapshot)
     {
         if(snapshot.val())
@@ -381,7 +396,39 @@ function profile_retrieve()
         }
         
     });
+  avatar();
 }
+
+function avatar() {
+
+  
+  firebase.database().ref('customer/').orderByChild("Uid").equalTo(Uid).on("value", function(snapshot)
+    {
+        
+        snapshot.forEach(function(child)
+        {
+
+           var obj = child.val();
+           
+           var Firstname = obj.Firstname;
+           var Lastname = obj.Lastname;
+           var initials = Firstname.charAt(0)+""+Lastname.charAt(0);
+           document.getElementById("profileImage").innerHTML = initials;
+           // alert(Firstname);
+           
+        });  
+        
+        
+    });
+
+}
+
+
+
+
+
+
+
 function logout() {
 // alert("logout");
   firebase.auth().signOut().then(function() {
