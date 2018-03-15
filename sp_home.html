@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<title>Home</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+	<style type="text/css">
+		.cardview{
+			width: 40%;
+		}
+    .space{
+      margin-top:50px;
+    }
+    td{
+        padding: 0 !important;
+        margin:0;
+      }
+      .dropdown-content li>a, .dropdown-content li>span
+      {
+        color:#48a79a;
+      }
+	</style>
+</head>
+<body>
+<!-- parallax -->
+
+
+
+
+
+
+<nav style="opacity: 0.8;height:90px">
+    <div class="nav-wrapper " style="background: #48a79a">
+      <div href="#" class="brand-logo" style="margin-left:8%;display: block;font-size: 50px;font-family: 'Bubblegum Sans', cursive;">Eaters'Stop</div>
+      <span style="font-size: 15px;margin-left: 12%;top: 40px;position: absolute;font-family: cursive;">Best Food Collection</span>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a onclick="testJS()">Profile</a></li>
+        <li><a href="sp_home.html">Menu</a></li>
+        <li><a href="invoice_sp.html">Invoice</a></li>
+        <li><a id="area2"></a></li>
+        <li id="fname"></li>
+        <li><a onclick="logout()">Logout</a></li>
+      </ul>
+
+      <ul id="slide-out" class="side-nav">
+        <li><a onclick="testJS()">Profile</a></li>
+        <li><a href="sp_home.html">Menu</a></li>
+        <li><a href="invoice_sp.html">Invoice</a></li>
+        <li><a id="area2"></a></li>
+        <li id="fname"></li>
+        <li><a onclick="logout()">Logout</a></li>
+     </ul>
+  <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>r
+
+    <div class="row center cardview">
+    <div class="input-field center container col s12 red-text" style="margin-top: 50px; width=30%">
+    <select id="Day" onChange="retrieve()" class="center red-text">
+      <option value="0" selected>Choose your option</option>
+      <option value="1" >Monday</option>
+      <option value="2" >Tuesday</option>
+      <option value="3" >Wednesday</option>
+      <option value="4" >Thursday</option>
+      <option value="5" >Friday</option>
+      <option value="6" >Saturday</option>
+      <option value="7" >Sunday</option>
+    </select>
+    <label>Select a day </label>
+  </div>
+</div>
+
+
+<div class="row container center-align" style="width:50%;margin-bottom:100px">
+   <table class="centered" style="border:1px solid #AAA">
+        <thead>
+          <tr>
+              <th></th>
+              <th>Lunch</th>
+              <th>Dinner</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Item 1</td>
+            <td><input type="text" id="lunch1" style="width: 50%"></td>
+            <td><input type="text" id="dinner1" style="width: 50%"></td>
+          </tr>
+          <tr>
+            <td>Item 2</td>
+            <td><input type="text" id="lunch2" style="width: 50%"></td>
+            <td><input type="text" id="dinner2" style="width: 50%"></td>
+          </tr>
+          <tr>
+            <td>Item 3</td>
+            <td><input type="text" id="lunch3" style="width: 50%"></td>
+            <td><input type="text" id="dinner3" style="width: 50%"></td>
+          </tr>
+          <tr>
+            <td>Item 4</td>
+            <td><input type="text" id="lunch4" style="width: 50%"></td>
+            <td><input type="text" id="dinner4" style="width: 50%"></td>
+          </tr>
+          <tr>
+            <td>Item 5</td>
+            <td><input type="text" id="lunch5" style="width: 50%"></td>
+            <td><input type="text" id="dinner5" style="width: 50%"></td>
+          </tr>
+          <tr>
+            <td>Item 6</td>
+            <td><input type="text" id="lunch6" style="width: 50%"></td>
+            <td><input type="text" id="dinner6" style="width: 50%"></td>
+          </tr>
+          <tr>
+            <td>Item 7</td>
+            <td><input type="text" id="lunch7" style="width: 50%"></td>
+            <td><input type="text" id="dinner7" style="width: 50%"></td>
+          </tr>
+        </tbody>
+      </table>
+      <a class="waves-effect waves-light  black-text0 right btn" onclick="clean()" style="margin-top: 20px;float: left!important;"><i class="material-icons right">format_clear</i>Clear Field</a>
+      <a class="waves-effect waves-light  black-text0 right btn" onclick="save()" style="margin-top: 20px"><i class="material-icons right">send</i>Save</a>
+
+</div>
+
+
+
+
+
+  <!-- footer -->
+    <footer class="page-footer "  style="background: #48a79a">
+          <div class="container">
+            <div class="row">
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Contact Us</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">About Us</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            <!-- © 2014 Copyright Text -->
+            </div>
+          </div>
+        </footer>
+      
+
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+      $('select').material_select();  //dropdown
+       $(".button-collapse").sideNav(); //nav-mobile
+    });
+
+</script>
+<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA6qc5XKVuRKGIoG9ilyMxKb0LjDP8V-NM",
+    authDomain: "tiffin-service-c75e3.firebaseapp.com",
+    databaseURL: "https://tiffin-service-c75e3.firebaseio.com",
+    projectId: "tiffin-service-c75e3",
+    storageBucket: "tiffin-service-c75e3.appspot.com",
+    messagingSenderId: "224722105482"
+  }
+  firebase.initializeApp(config);
+</script>
+
+<!-- Welcome user firebase -->
+<script type="text/javascript">
+//  
+var userEmail;
+var usertreeid;
+var Uid;
+firebase.auth().onAuthStateChanged(function(user)
+ {
+  if (user) {
+    // User is signed in.
+    var user = firebase.auth().currentUser;
+    userEmail = user.email;
+    firebase.database().ref('service_provider/').orderByChild("Email").equalTo(userEmail).on("value", function(snapshot) {
+    snapshot.forEach(function(child) {
+        var value = child.val();
+
+        usertreeid = value.Uid;
+        Uid = usertreeid;
+        profile_retrieve();
+    });
+  });
+    $("#emailname").html("Welcome "+user.email);
+
+
+
+  } else {
+    window.open("index.html","_self");
+    // No user is signed in.
+  }
+});
+
+
+
+
+function clean()
+{
+	
+  for (var i = 1; i <= 7; i++) {
+        document.getElementById("lunch"+i).value = "";
+        document.getElementById("dinner"+i).value = "";
+
+        }	
+}
+
+function testJS() {
+ 
+    var b = Uid;
+        url = 'profile_sp.html?name=' + encodeURIComponent(b);
+
+    document.location.href = url;
+}
+
+function profile_retrieve()
+{
+  firebase.database().ref('service_provider/').orderByChild("Email").equalTo(userEmail).on("value", function(snapshot)
+    {
+        snapshot.forEach(function(child)
+        {
+           var obj = child.val();
+           $("#fname").html("Welcome "+obj.fname); 
+          $("#area2").html(obj.area);
+
+        });
+    });
+}
+
+
+// Logout
+function logout() {
+//alert("logout");
+	firebase.auth().signOut().then(function() {
+  // Sign-out successful.
+  window.open("index.html","_self");
+}).catch(function(error) {
+  // An error happened.
+});
+	// body...
+}
+
+function retrieve(){
+	
+	var Day = $("#Day").val();
+	  for (var i = 1; i <= 7; i++) {
+        document.getElementById("lunch"+i).value = "";
+        document.getElementById("dinner"+i).value = "";
+
+        }
+firebase.database().ref('service_provider/'+usertreeid+'/menu/').orderByChild("day").equalTo(Day).on("value", function(snapshot) {
+    snapshot.forEach(function(child) {
+        var menu = child.val();
+        var lunch = menu.lunch;
+        var dinner = menu.dinner;
+  
+
+      
+        for (var i = 1; i <= Object.keys(lunch).length; i++) 
+        {
+        	// $("#lunch"+i).html(lunch['line'+i]);	
+        	document.getElementById("lunch"+i).value = lunch['line'+i];
+       //alert(lunch['line'+i]);
+        }
+
+        for (var i = 1; i <= Object.keys(dinner).length; i++) 
+        {
+        	document.getElementById("dinner"+i).value = dinner['line'+i];
+        	
+        }
+        
+    });
+  });
+
+}
+
+function save() {
+var Day = $("#Day").val();
+if(Day=="0")
+{
+  alert("Please Select the Day");
+}
+else
+{
+var lineslunch = [];
+var linesdinner = [];
+   
+      var flagcheck=0;
+      if($("#lunch1").val()==""&&$("#lunch2").val()==""&&$("#lunch3").val()==""&&$("#lunch4").val()==""&&$("#lunch5").val()==""&&$("#lunch6").val()==""&&$("#lunch7").val()==""&&$("#dinner1").val()==""&&$("#dinner2").val()==""&&$("#dinner3").val()==""&&$("#dinner4").val()==""&&$("#dinner5").val()==""&&$("#dinner6").val()==""&&$("#dinner7").val()=="")
+      {
+      	flagcheck=1;
+      }
+  //     for (var i = 0; i <=7; i++) {
+		// if($("#lunch"+i).val()=="undefined")
+		// {	
+		// }
+		// else
+		// {
+		// 	flagcheck=0;
+		// 	//alert($("#lunch"+i).val())
+		// 	break;
+		// }
+		// if($("#dinner"+i).val()=="undefined")
+		// {
+			
+		// }
+		// else
+		// {flagcheck=0;
+		// 	break;			
+		// }
+  //     }
+   //   alert(flagcheck)
+      if(flagcheck==0)
+      {
+
+      	if(Day=="1")
+      {
+        firebase.database().ref('problem/'+usertreeid+'/').update({
+        lunch1: "1",
+        dinner1: "1"
+      });
+      }
+      if(Day=="2")
+      {
+        alert(Day);
+        firebase.database().ref('problem/'+usertreeid+'/').update({
+        lunch2: "1",
+        dinner2: "1"});
+      }if(Day=="3")
+      {
+        firebase.database().ref('problem/'+usertreeid+'/').update({
+        lunch3: "1",
+        dinner3: "1"
+      });
+      }if(Day=="4")
+      {
+        firebase.database().ref('problem/'+usertreeid+'/').update({
+        lunch4: "1",
+        dinner4: "1"
+      });
+      }
+      if(Day=="5")
+      {
+        firebase.database().ref('problem/'+usertreeid+'/').update({
+        lunch5: "1",
+        dinner5: "1"
+      });
+      }if(Day=="6")
+      {
+        firebase.database().ref('problem/'+usertreeid+'/').update({
+        lunch6: "1",
+        dinner6: "1"
+      });
+      }if(Day=="7")
+      {
+        firebase.database().ref('problem/'+usertreeid+'/').update({
+        lunch7: "1",
+        dinner7: "1"
+      });
+      }
+       firebase.database().ref('service_provider/'+usertreeid+'/menu/'+Day+'/').update({
+      	day: Day
+
+      });
+ 		firebase.database().ref('service_provider/'+usertreeid+'/menu/'+Day+'/lunch').update({
+      line1: $("#lunch1").val(),
+      line2: $("#lunch2").val(),
+      line3: $("#lunch3").val(),
+      line4: $("#lunch4").val(),
+      line5: $("#lunch5").val(),
+      line6: $("#lunch6").val(),
+      line7: $("#lunch7").val()
+     });
+      firebase.database().ref('service_provider/'+usertreeid+'/menu/'+Day+'/dinner').update({
+      line1: $("#dinner1").val(),
+      line2: $("#dinner2").val(),
+      line3: $("#dinner3").val(),
+      line4: $("#dinner4").val(),
+      line5: $("#dinner5").val(),
+      line6: $("#dinner6").val(),
+      line7: $("#dinner7").val(),
+     });
+    }     	
+     else
+     { 
+     	alert("Please Fill the Details");
+     }
+ }
+}
+ 
+// firebase.database().ref('customer/').orderByChild("Email").equalTo(userEmail).on("value", function(snapshot) {
+//     snapshot.forEach(function(child) {
+//     var Userdetail = child.val();
+//     Uid = Userdetail.Uid;  
+//     //alert(Uid);
+//     });
+    
+     
+      
+   
+//     }
+//   });
+
+
+
+  
+</script>
+
+</body>
+</html>

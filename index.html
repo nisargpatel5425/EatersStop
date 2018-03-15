@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<title>Index</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+	<style type="text/css">
+		.cardview{
+			width: 30%;
+		}
+	</style>
+</head>
+<body>
+
+<div class="parallax-container" style="height: 450px">
+  
+   <nav style="opacity: 0.9;margin-top: 0px;height: 22%">
+    <div class="nav-wrapper" style="background: #41a79a">
+      <!--  -->
+      <div href="#" class="brand-logo" style="margin-left:8%;display: block;font-size: 50px;font-family: 'Bubblegum Sans', cursive;">Eaters'Stop</div>
+      <span style="font-size: 15px;margin-left: 13%;top: 40px;position: absolute;font-family: cursive;">Best tiffin services</span>
+
+      <ul id="nav-mobile" class="right hide-on-med-and-down"
+       </ul>
+      <ul id="slide-out" class="side-nav">
+      </ul>
+  <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+    <div class="parallax"><img src="images/1.jpg"></div>
+  </div>
+
+
+<div class="section white">
+ <h1 class="center" style="font-family:vardana">Login Form</h1>
+    <div class="row container cardview input-field" >
+   
+      <input id="Email" type="email" class="validate">
+      	<label for="Email">Email</label>
+    </div>
+    <div class="row container cardview input-field" >
+      	<input id="Password" type="password" class="validate">
+        <label for="Password">password</label>
+
+        <h6 class="right"><a href="forgotpassword.html">Forgot Password?</a></h6><br>
+        <button class="btn waves-effect waves-light container cardview centre" type="submit" name="action" onclick="login()">Submit	</button>
+    </div>
+	  <div class="row container cardview input-field" >
+	        <h6 class="right"><a href="register.html">New here? Click here to register.</a></h6>
+	  </div>
+</div>
+
+
+
+  <!-- footer -->
+    <footer class="page-footer "  style="background:#48a79a">
+      <!-- 54afa6 -->
+          <div class="container">
+            <div class="row">
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Contact Us</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">About Us</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            <!-- © 2014 Copyright Text -->
+            </div>
+          </div>
+        </footer>
+      
+
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+      $('.parallax').parallax();
+    });
+
+</script>
+<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA6qc5XKVuRKGIoG9ilyMxKb0LjDP8V-NM",
+    authDomain: "tiffin-service-c75e3.firebaseapp.com",
+    databaseURL: "https://tiffin-service-c75e3.firebaseio.com",
+    projectId: "tiffin-service-c75e3",
+    storageBucket: "tiffin-service-c75e3.appspot.com",
+    messagingSenderId: "224722105482"
+  };
+  firebase.initializeApp(config);
+</script>
+
+
+<script type="text/javascript">
+
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    // User is signed in.
+ //  window.open("edit_menu.html","_self");
+
+  } else {
+  
+    // No user is signed in.
+  }
+});
+
+
+$("#Email").focus();
+var UserEmail;
+function login()
+{
+  Email = $("#Email").val();
+  Password = $("#Password").val();
+  UserEmail = Email;
+  firebase.auth().signInWithEmailAndPassword(Email, Password).then(function() {  
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    // User is signed in.
+    var displayName = user.displayName;
+    var email = user.email;
+    var emailVerified = user.emailVerified;
+    var photoURL = user.photoURL;
+    var isAnonymous = user.isAnonymous;
+    var uid = user.uid;
+    var providerData = user.providerData;
+    //alert(email);
+    // ...
+  } else {
+    // User is signed out.
+   // Materialize.toast(errorMessage, 3000, 'rounded');
+     alert("error");
+    // ...
+  }
+});
+
+ firebase.database().ref('service_provider').orderByChild("Email").equalTo(UserEmail).on("value", function(snapshot) {
+    if(snapshot.val()){
+
+       window.open("sp_home.html","_self");
+    snapshot.forEach(function(child) {
+      var value = child.val()
+     // alert(value.Email);
+     window.open("sp_home.html","_self");
+          });
+  }
+  else{
+    window.open("edit_menu.html","_self");
+  }
+});
+
+
+   // window.open("sp.html","_self");
+  }).catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  Materialize.toast(errorMessage, 3000, 'rounded');
+  // alert(errorMessage);
+  // ...
+});
+}
+$("#Password").on("keydown", function (e) {
+    if (e.keyCode === 13) {  //checks whether the pressed key is "Enter"
+        login();
+    }
+});
+  
+</script>
+
+</body>
+</html>

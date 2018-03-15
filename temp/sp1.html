@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+	<style type="text/css">
+		.cardview{
+			width: 40%;
+		}
+    .space{
+      margin-top:50px;
+    }
+	</style>
+</head>
+<body>
+<!-- parallax -->
+
+<nav>
+    <div class="nav-wrapper  light-blue darken-2">
+      <a href="#" class="brand-logo">Logo</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="sass.html">Sass</a></li>
+        <li><a href="badges.html">Components</a></li>
+        <li id="emailname"></li>
+        <li><a onclick="logout()">Logout</a></li>
+      </ul>
+      <ul id="slide-out" class="side-nav">
+      <li><a href="sass.html">Sass</a></li>
+        <li><a href="badges.html">Components</a></li>
+        <li><a onclick="logout()">Logout</a></li>
+  </ul>
+  <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+   
+        
+  <div class="slider">
+    <ul class="slides">
+      <li>
+        <img src="1.jpg"> <!-- random image -->
+        <div class="caption center-align">
+          <h3 style="color:yellow; font-family:verdana;">Sai Tiffin Service</h3>
+          <h5 style="color:yellow; font-family:verdana">We provide best delicious food.</h5>
+          <!-- class="light grey-text text-lighten-3" -->
+        </div>
+
+ 
+
+
+  <!-- footer -->
+    <footer class="page-footer black">
+          <div class="container">
+            <div class="row">
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Contact Us</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">About Us</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2014 Copyright Text
+            </div>
+          </div>
+        </footer>
+      
+
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+      $('select').material_select(); 
+      $('.slider').slider(); //dropdown
+       $(".button-collapse").sideNav(); //nav-mobile
+    });
+
+</script>
+<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA6qc5XKVuRKGIoG9ilyMxKb0LjDP8V-NM",
+    authDomain: "tiffin-service-c75e3.firebaseapp.com",
+    databaseURL: "https://tiffin-service-c75e3.firebaseio.com",
+    projectId: "tiffin-service-c75e3",
+    storageBucket: "tiffin-service-c75e3.appspot.com",
+    messagingSenderId: "224722105482"
+  }
+  firebase.initializeApp(config);
+</script>
+
+<!-- Welcome user firebase -->
+<script type="text/javascript">
+firebase.auth().onAuthStateChanged(function(user)
+ {
+  if (user) {
+    // User is signed in.
+    var user = firebase.auth().currentUser;
+    $("#emailname").html("Welcome "+user.email);
+
+  } else {
+  	window.open("index.html","_self");
+    // No user is signed in.
+  }
+});
+
+
+// Logout
+function logout() {
+//alert("logout");
+	firebase.auth().signOut().then(function() {
+  // Sign-out successful.
+  window.open("index.html","_self");
+}).catch(function(error) {
+  // An error happened.
+});
+	// body...
+}
+
+
+  
+</script>
+
+</body>
+</html>

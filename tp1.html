@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>Home</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <style type="text/css">
+    .cardview{
+      width: 40%;
+    }
+    .space{
+      margin-top:50px;
+    }
+    .collapsible-body{
+      padding-top: 0px
+    }
+  </style>
+</head>
+<body>
+<!-- parallax -->
+
+
+ `
+
+
+
+<nav style="opacity: 0.8;height:90px">
+    <div class="nav-wrapper " style="background: #48a79a">
+      <div href="#" class="brand-logo" style="margin-left:8%;display: block;font-size: 50px;font-family: 'Bubblegum Sans', cursive;">Eaters'Stop</div>
+      <span style="font-size: 15px;margin-left: 12%;top: 40px;position: absolute;font-family: cursive;">Best Food Collection</span>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+      	<li><a onclick="testJS()">Profile</a></li>
+         <li><a href="edit_menu.html">My Orders</a></li>
+        <li><a href="invoice.html">Invoice</a></li>
+        
+        <li><a href="badges.html">Waghodiya Road</a></li>
+        <!-- <li id="emailname"></li> -->
+        <li id="fname"></li>
+        <li><a onclick="logout()">Logout</a></li>
+      </ul>
+      <ul id="slide-out" class="side-nav">
+      	<li><a onclick="testJS()">Profile</a></li>
+      <li><a href="edit_menu.html">My Orders</a></li>
+        <!-- <li><a href="badges.html">Pay</a></li> -->
+        <li><a href="invoice.html">Invoice</a></li>
+        <li><a href="badges.html">Waghodiya Road</a></li>
+        <!-- <li id="emailname"></li> -->
+        <li id="fname"></li>
+        <li><a onclick="logout()">Logout</a></li>
+  </ul>
+  <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+
+   
+  <table class="highlight container centered" style="margin-top: 40px;">
+        <thead>
+          <tr>
+              <th>Day</th>
+              <th>Lunch</th>
+              <th>Dinner </th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Monday</td>
+            <td><a class="waves-effect waves-teal btn-flat grey lighten-2" onclick="show_dialog('1','lunch')" id="lunch1" >Select Provider</a></td>
+            <td><a class="waves-effect waves-teal btn-flat grey lighten-2" onclick="show_dialog('1','dinner')" id="dinner1" >Select Provider</a></td>
+          </tr>
+          <tr>
+            <td>Tuesday</td>
+            <td><a class="waves-effect waves-teal btn-flat grey lighten-2" onclick="show_dialog('2','lunch')" id="lunch2" >Select Provider</a></td>
+            <td><a class="waves-effect waves-teal btn-flat grey lighten-2" onclick="show_dialog('2','dinner')" id="dinner2" >Select Provider</a></td>
+          </tr>
+          <tr>
+            <td>Wednesday</td>
+            <td><a class="waves-effect waves-teal btn-flat grey lighten-2" onclick="show_dialog('3','lunch')" id="lunch3" >Select Provider</a></td>
+            <td><a class="waves-effect waves-teal btn-flat grey lighten-2" onclick="show_dialog('3','dinner')" id="dinner3" >Select Provider</a></td>
+          </tr>
+
+          <tr>
+            <td>Thursday</td>
+            <td><a class="waves-effect waves-teal btn-flat grey lighten-2" onclick="show_dialog('4','lunch')" id="lunch4" >Select Provider</a></td>
+            <td><a class="waves-effect waves-teal btn-flat grey lighten-2" onclick="show_dialog('4','dinner')" id="dinner4" >Select Provider</a></td>
+          </tr>
+
+          <tr>
+            <td>Friday</td>
+          <td><a class="waves-effect waves-teal btn-flat grey lighten-2" onclick="show_dialog('5','lunch')" id="lunch5" >Select Provider</a></td>
+            <td><a class="waves-effect waves-teal btn-flat grey lighten-2" onclick="show_dialog('5','dinner')" id="dinner5" >Select Provider</a></td>
+          </tr>
+
+          <tr>
+            <td>Saturday</td>
+           <td><a class="waves-effect waves-teal btn-flat grey lighten-2" onclick="show_dialog('6','lunch')" id="lunch6" >Select Provider</a></td>
+            <td><a class="waves-effect waves-teal btn-flat grey lighten-2" onclick="show_dialog('6','dinner')" id="dinner6" >Select Provider</a></td>
+          </tr>
+
+          <tr>
+            <td>Sunday</td>
+           <td><a class="waves-effect waves-teal btn-flat grey lighten-2" onclick="show_dialog('7','lunch')" id="lunch7" >Select Provider</a></td>
+            <td><a class="waves-effect waves-teal btn-flat grey lighten-2" onclick="show_dialog('7','dinner')" id="dinner7" >Select Provider</a></td>
+          </tr>
+          <tr><td></td><td></td><td><a class="waves-effect waves-light btn" onclick="save()"><i class="material-icons right" >send</i>Proceed</a>
+</td></tr>
+        </tbody>
+      </table>  
+      
+   
+ 
+<!-- Modal Structure -->
+  <div id="modal1" class="modal ">
+    <div class="modal-content">
+      <h4>Service Provider List </h4>
+      <p><ul class="collapsible list_name" data-collapsible="accordion">
+    <!-- <li>
+      <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+      <div class="collapsible-body"><span>
+        <h5 class="">Menu</h5><br>
+        <div class="menu_list"></div>
+
+    </span></div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+    </li> -->
+  </ul></p>
+    </div>
+  </div>
+          
+
+
+
+
+  <!-- footer -->
+    <footer class="page-footer " style="background: #48a79a">
+          <div class="container">
+            <div class="row">
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Contact Us</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">About Us</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            <!-- © 2014 Copyright Text -->
+            </div>
+          </div>
+        </footer>
+<!-- html end       -->
+
+<!-- script start -->
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+  <script type="text/javascript">
+  	// Initializei
+  $(document).ready(function(){
+      $('select').material_select();  //dropdown
+       $(".button-collapse").sideNav(); //nav-mobile
+       $('.modal').modal();
+       $('.collapsible').collapsible();
+       
+    });
+
+
+</script>
+<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA6qc5XKVuRKGIoG9ilyMxKb0LjDP8V-NM",
+    authDomain: "tiffin-service-c75e3.firebaseapp.com",
+    databaseURL: "https://tiffin-service-c75e3.firebaseio.com",
+    projectId: "tiffin-service-c75e3",
+    storageBucket: "tiffin-service-c75e3.appspot.com",
+    messagingSenderId: "224722105482"
+  }
+  firebase.initializeApp(config);
+</script>
+
+<!-- Welcome user firebase -->
+<script type="text/javascript">
+var userEmail;
+firebase.auth().onAuthStateChanged(function(user)
+ {
+  if (user) {
+    // User is signed in.
+    var user = firebase.auth().currentUser;
+    userEmail = user.email;
+    // $("#emailname").html("Welcome "+user.email);
+    profile_retrieve() 
+  } else {
+    window.open("index.html","_self");
+    // No user is signed in.
+  }
+});
+var flag=0;
+var names=[];
+var Uid;
+var emails=[];
+var entry_submit=[];
+var e;
+flag_click=0;
+var id = "";
+
+function show_dialog(argument1,argument2) {
+  flag_click=1;
+  no_data=0;
+  flag=0;
+  $(".list_name").html(" Loading data");
+  id=argument2+""+argument1;
+   firebase.database().ref('problem/').orderByChild(id).equalTo("1").on("value", function(snapshot) {
+    if(snapshot.val()){
+    snapshot.forEach(function(child) {
+      no_data=1;
+   var obj = child.val();
+  // alert(JSON.stringify(obj)); 
+  e = obj.email;
+
+
+      readdata(argument1,argument2,e);
+    });
+  }
+  else
+  {
+    $(".list_name").html("No data found");
+  }
+  });
+    $('#modal1').modal('open');
+}
+
+function testJS() {
+ 
+    var b = Uid;
+        url = 'profile.html?name=' + encodeURIComponent(b);
+
+    document.location.href = url;
+}
+
+function readdata(day,time,email1) 
+{
+  firebase.database().ref('service_provider/').orderByChild("Email").equalTo(email1).on("value", function(snapshot) {
+    snapshot.forEach(function(child) {
+      var spdetail = child.val();
+      var menuval = spdetail.menu;
+      flag++;
+      if(flag==1 || flag_click==1)
+      {
+        $(".list_name").html("<li><div class=\"collapsible-header\"><div class=\"name_service"+flag+"\"></div></div><div class=\"collapsible-body\"><span id=\"\"> <h5>Menu</h5> <div class=\"right\" onclick=\"test('"+flag+"')\" > <input type=\"checkbox\" id=\"test6"+flag+"\" /><label id=\"Price"+flag+"\" for=\"test6\"></label></div><div class=\"menu_list"+flag+"\"></div></span></div></li><li>");
+      }
+      else
+      {
+        $(".list_name").append("<li><div class=\"collapsible-header\"><div class=\"name_service"+flag+"\"></div></div><div class=\"collapsible-body\"><span id=\"\"> <h5>Menu</h5> <div class=\"right\" onclick=\"test('"+flag+"')\" > <input type=\"checkbox\" id=\"test6"+flag+"\" /><label id=\"Price"+flag+"\" for=\"test6\"></label></div><div class=\"menu_list"+flag+"\"></div></span></div></li><li>");
+      }
+        names.push(spdetail.service_name);
+        $(".name_service"+flag).append(spdetail.service_name);
+         // alert(JSON.stringify(menuval)); 
+          
+            data = menuval[day];
+            // alert(JSON.stringify(data)); 
+            if(time=="lunch")
+              var menu = data['lunch'];
+            if(time=="dinner")
+               var menu = data['dinner'];
+             for(var i=1;i<=Object.keys(menu).length;i++)
+            {
+                $(".menu_list"+flag).append("<h6>"+menu['line'+i]+"</h6>");
+            }
+          
+        
+         // alert("helloo");
+         flag_click=0;
+        $("#Price"+flag).html("&#8377;"+spdetail.price);
+        
+    });  
+  });
+}
+
+function profile_retrieve()
+{
+  firebase.database().ref('customer/').orderByChild("Email").equalTo(userEmail).on("value", function(snapshot)
+    {
+        snapshot.forEach(function(child)
+        {
+           var obj = child.val();
+           $("#fname").html("Welcome "+obj.Firstname); 
+           Uid = obj.Uid; 
+        });
+    });
+}
+
+// // Logout
+function logout() {
+// alert("logout");
+  firebase.auth().signOut().then(function() {
+  // Sign-out successful.
+  window.open("index.html","_self");
+}).catch(function(error) {
+  // An error happened.
+});
+  // body...
+}
+
+function test(provider_id) {
+    $('#modal1').modal('close');
+    $('#'+id).html(names[provider_id-1]+"");
+}
+
+function save() {
+ // alert($("#lunch1").html());
+ 
+ //alert(userEmail);
+  firebase.database().ref('customer/').orderByChild("Email").equalTo(userEmail).on("value", function(snapshot) {
+    snapshot.forEach(function(child) {
+    var Userdetail = child.val();
+    Uid = Userdetail.Uid;  
+    });
+    
+     for(i=1;i<=7;i++)
+    {
+    a =  $("#lunch"+i).html();
+       firebase.database().ref('customer/'+Uid+'/schedule/'+i+'/').update({
+      lunch: a
+     });
+    }
+   for(i=1;i<=7;i++)
+    {
+      a = $("#dinner"+i).html();
+      firebase.database().ref('customer/'+Uid+'/schedule/'+i+'/').update({
+      dinner: a
+     });
+    }
+  });
+
+ window.open("edit_menu.html","_self");
+}
+  
+</script>
+
+</body>
+</html>

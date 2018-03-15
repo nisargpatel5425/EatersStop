@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<title>Register</title>
+	<link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+	<style type="text/css">
+		.cardview{
+			width: 30%;
+		}
+	</style>
+</head>
+<body>
+ 
+<!-- parallax -->
+<div class="parallax-container" style="height: 450px">
+	
+	 <nav style="opacity: 0.9;margin-top: 0px;height: 22%">
+    <div class="nav-wrapper " style="background: #48a79a">
+      
+      <div href="#" class="brand-logo" style="margin-left:8%;display: block;font-size: 50px;font-family: 'Bubblegum Sans', cursive;">Eaters'Stop</div>
+      <span style="font-size: 15px;margin-left: 13%;top: 40px;position: absolute;font-family: cursive;">Best tiffin services</span>
+
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+       </ul>
+      <ul id="slide-out" class="side-nav">
+      </ul>
+  <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+    <div class="parallax"><img src="images/1.jpg"></div>
+  </div>
+
+
+
+
+
+
+
+
+<div class="section white">
+ <h1 class="center" style="font-family:vardana">Register Form</h1>
+
+
+    <div class="row container cardview input-field" >
+      <div class="col s6" style="padding:0;padding-right:10px"> 
+      <input id="Firstname" type="text" class="validate">
+        <label class="col s6" style="padding:0 margin-top:50px;" for="Firstname">FirstName</label>
+    </div>
+    <div class="col s6" style="padding:0">
+      <input id="Lastname" type="text" class="validate">
+      <label class="col s6" style="padding:0" for="Lastname">Lastname</label>
+    </div>
+  </div>
+
+    <div class="row container cardview input-field" >
+      <input id="Email" type="email" class="validate">
+        <label for="Email">Email</label>
+    </div>
+
+    <div class="row container cardview input-field" >
+      <input id="Password" type="password" class="validate">
+        <label for="Password">Password</label>
+    </div>
+
+    <div class="row container cardview input-field" >
+        <input id="Confirmpassword" type="password" class="validate">
+        <label for="Confirmpassword">Confirm password</label>
+    </div>
+
+    <div class="row container cardview input-field" >
+      <input id="Dob" class="datepicker" type="text" class="validate">
+        <label for="Dob">Date of Birth</label>
+    </div>
+
+    <div class="row container cardview demo" >
+    	<form id="gender">
+      <input class="with-gap" name="Gender" value="Male" id="Gender1" type="radio" class="validate">
+        <label for="Gender1">Male</label>
+      <input class="with-gap" name="Gender" value="Female" id="Gender2" type="radio" class="validate">
+        <label for="Gender2">Female</label>
+    </form>
+    </div>    
+
+    <div class="row container cardview input-field" >
+      <input id="Address1" type="text" class="validate">
+      <label for="Address1">Address1</label>
+    </div>
+
+     
+
+     <div class="row container cardview input-field" >
+      <input id="Address2" type="text" class="validate">
+      <label for="Address2">Address2</label>
+    </div>
+
+    <div class="row container cardview ">
+      <label>Select Area</label>
+      <select id="Area" class="center ">
+        <option value="">Choose your option</option>
+        <option value="Waghodia">Waghodia</option>
+        <option value="Uma Chowkdi">Uma Chowkdi</option>
+        <option value="Karelibaug">Karelibaug</option>
+      </select>
+      
+    </div>
+
+    <div class="row container cardview">
+      <label>Select City</label>
+    <select id="City" class="center ">
+      <option value="" disabled selected>Choose your option</option>
+      <option value="Vadodara">Vadodara</option>
+      <!-- <option value="2">Option 2</option> -->
+      <!-- <option value="3">Option 3</option> -->
+    </select>
+    <label>Select City</label>
+  </div>
+
+    <div class="row container cardview ">
+      <label>Select State</label>
+      <select id="State" class="center ">
+        <option value="">Choose your option</option>
+        <option value="Gujarat">Gujarat</option>
+        <!-- <option value="2">Option 2</option>
+        <option value="3">Option 3</option> -->
+      </select>
+      
+    </div>
+
+    <div class="row container cardview ">
+      <label>Select Country</label>
+      <select id="Country" class="center country">
+        <option value="">Choose your option</option>
+        <option value="India">India</option>
+        <!-- <option value="2">Option 2</option>
+        <option value="3">Option 3</option> -->
+      </select>
+      
+    </div>
+
+    <div class="row container cardview " > 
+      <div class="input-field col s2">
+        <input id="Countrycode" value="CC" type="text" disabled >
+      </div>
+      <div class="input-field col s10">
+            <input id="Phonenumber" type="number" data-length="10">
+            <label for="Phonenumber">Phone number</label>
+          </div>
+    </div>
+
+     <div class="row container cardview " > 
+      <div class="input-field col s4">
+        <input id="Stdcode"  type="text" placeholder="STD Code" >
+      </div>
+      <div class="input-field col s8">
+            <input id="Telenumber" type="number" data-length="6">
+            <label for="Telenumber">Telephone number</label>
+          </div>
+    </div>
+
+    <div class="row container cardview demo" >
+      <form id="type">
+      <input class="with-gap" name="Type" value="Customer" id="User1" type="radio" class="validate">
+        <label for="User1">Customer</label>
+      <input class="with-gap" name="Type" value="Service Provider" id="User2" type="radio" class="validate">
+        <label for="User2">Servive Provider</label>
+    </form>
+    </div> 
+    <div class="hide1">
+    <div class="row container cardview input-field" >
+      <input id="servicename" type="text" class="validate">
+        <label for="servicename" style="">Service Name</label>
+    </div>
+    <div class="row container cardview input-field" >
+      <input id="price" type="number" class="validate">
+        <label for="price" style="">Price</label>
+    </div>
+  </div>
+
+
+
+
+    <!-- <div class="row container cardview " > 
+     <p>
+      <input type="checkbox" id="test5" />
+      <label for="test5">tick if you are registering as a service provider</label>
+    </p>
+    </div> -->
+
+ <div class="row container cardview input-field" >
+        <h6 class="right"><a href="index.html">Already Registerd? Login</a></h6>
+        <button class="btn waves-effect waves-light container cardview centre" type="submit" name="action" onclick="signup()">Submit
+    	
+  </button>
+    </div>
+
+	
+
+
+
+  </div>
+
+
+
+  <!-- footer -->
+    <footer class="page-footer "  style="background: #48a79a">
+          <div class="container">
+            <div class="row">
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Contact Us</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">About Us</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+           <!--  © 2014 Copyright Text -->
+            </div>
+          </div>
+        </footer>
+      
+
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+   
+      $('.parallax').parallax();
+      $('input#Phonenumber').characterCounter();
+       $('select').material_select();
+      $('.datepicker').pickadate({
+        selectMonths: true, // Creates a dropdown to control month
+        selectYears: 50, // Creates a dropdown of 15 years to control year,
+        today: 'Today',
+        clear: 'Clear',
+        close: 'Ok',
+        closeOnSelect: false // Close upon selecting a date,
+  });
+    });
+
+</script>
+<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  
+</script>
+
+
+
+<script type="text/javascript">
+
+$(function(){
+    $("#User1, #User2").change(function(){
+       // $("#servicename").attr("disabled",true);
+        if($("#User1").is(":checked")){
+         $(".hide1").html("");
+        }
+        else if($("#User2").is(":checked")){
+         $(".hide1").html(" <div class=\"row container cardview input-field\" ><input id=\"servicename\" type=\"text\" class=\"validate\"><label for=\"servicename\" style=\"\">Service Name</label></div><div class=\"row container cardview input-field\" ><input id=\"price\" type=\"number\" class=\"validate\"><label for=\"price\" style=\"\">Price</label></div>");
+          
+            // $("#servicename").removeAttr("disabled");
+        }
+    });
+});
+//focus method jquery
+// $("#Firstname").focus();
+
+
+//connection string
+var config = {
+    apiKey: "AIzaSyA6qc5XKVuRKGIoG9ilyMxKb0LjDP8V-NM",
+    authDomain: "tiffin-service-c75e3.firebaseapp.com",
+    databaseURL: "https://tiffin-service-c75e3.firebaseio.com",
+    projectId: "tiffin-service-c75e3",
+    storageBucket: "tiffin-service-c75e3.appspot.com",
+    messagingSenderId: "224722105482"
+  };
+  firebase.initializeApp(config);
+
+
+$('.country').on('change', function() {
+  if(this.value == "India")
+  {
+  $('#Countrycode').val("+91");
+  // alert('aj');
+}
+else{
+  $('#Countrycode').val("CC");
+
+  // alert('1234567');
+}
+})
+
+$("#Phonenumber").on("keydown", function (e) {
+    if (e.keyCode === 13) {  //checks whether the pressed key is "Enter"
+        signin();
+    }
+});
+function check() {
+	// body...
+	key=firebase.database().ref('customer/').push({
+	    total: "8"+""
+	  }).key;
+	alert(key);
+}
+
+
+//auth signup  
+function signup()
+{
+  //alert("Login");
+  
+
+  // Firstname = $("#Firstname").val();
+  // Lastname = $("#Lastname").val();
+  Email = $("#Email").val();
+  Password = $("#Password").val();
+  Confirmpassword = $("#Confirmpassword").val();
+  // Dob = $("#Dob").val();
+  // Gender = $('input[name=Gender]:checked', '#gender').val();
+  // Address1 = $("#Address1").val();
+  // Address2 = $("#Address2").val();
+  // Area = $("#Area").val();
+  // City = $("#City").val();
+  // State = $("#State").val();
+  // Country = $("#Country").val();
+  // Phonenumber = $("#Phonenumber").val();
+  // Telenumber = $("#Telenumber").val();
+  // Type = $('input[name=Type]:checked', '#type').val();
+  // alert(Firstname);
+  // alert(Lastname);
+  // alert(Email);
+  // alert(Password);
+  // alert(Confirmpassword);
+  // alert(Dob);
+  // alert(Gender);
+  // alert(Address1);
+  // alert(Address2);
+  // alert(Area);
+  // alert(City);
+  // alert(State);
+  // alert(Country);
+  // alert(Phonenumber);
+  // alert(Telenumber);
+  // alert();
+  // alert();
+
+  if(Password == Confirmpassword)
+  {
+      firebase.auth().createUserWithEmailAndPassword(Email, Password).then(function() {
+     writeUserData();
+      window.open("index.html","_self");
+    }).catch(function(error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+   
+    // ...
+    Materialize.toast(errorMessage, 3000, 'rounded');
+    // alert("error "+ errorMessage);
+    });
+
+  }
+  else
+  {
+    Materialize.toast('password does not match', 3000, 'rounded'); // 'rounded' is the class I'm applying to the toast
+  }
+
+  
+}	//sign up close
+
+
+//code to understand
+var database = firebase.database();
+// firebase.database().ref('customer/total').once('value').then(function(snapshot) {
+//   totalcust = snapshot.val();
+// });
+
+// firebase.database().ref('user/total').once('value').then(function(snapshot) {
+//   totaluser = snapshot.val();
+// });
+
+// firebase.database().ref('service_provider/total').once('value').then(function(snapshot) {
+//   totalsup = snapshot.val();
+// });
+
+
+//fetch value from html
+function writeUserData(){ 
+
+  Firstname = $("#Firstname").val();
+  Lastname =  $("#Lastname").val();
+  Email = $("#Email").val();
+  Password = $("#Password").val();
+  Confirmpassword = $("#Confirmpassword").val();
+  Dob = $("#Dob").val();
+  Gender = $('input[name=Gender]:checked', '#gender').val();
+  Address1 = $("#Address1").val();
+  Address2 = $("#Address2").val();
+  Area = $("#Area").val();
+  City = $("#City").val();
+  State = $("#State").val();
+  Country = $("#Country").val();
+  Phonenumber = $("#Phonenumber").val();
+  Telenumber = $("#Telenumber").val();
+  Type = $('input[name=Type]:checked', '#type').val();
+  Price = $("#price").val();
+  Servicename = $("#servicename").val();
+  
+  var uid;
+
+
+//session maintain
+  firebase.auth().onAuthStateChanged(function(user) {	
+  if (user) {
+    // User is signed in.
+    var displayName = user.displayName;
+    var email = user.email;
+    var emailVerified = user.emailVerified;
+    var photoURL = user.photoURL;
+    var isAnonymous = user.isAnonymous;
+    uid = user.uid;
+    var providerData = user.providerData;
+    //alert(email);
+    // ...
+  } else {
+    // User is signed out.
+   // Materialize.toast(errorMessage, 3000, 'rounded');
+     alert("error");
+    // ...
+  }
+});
+ // alert(uid);
+ 
+
+var Uid;
+// totaluser++;
+  //alert("database");
+  if(Type=="Customer")
+  {
+  	// totalcust++;
+  Uid = firebase.database().ref('customer/').push({
+    Firstname: Firstname,
+    Lastname: Lastname,
+    Email: Email,
+    Password: Password,
+    Dob: Dob,
+    Area: Area,
+    City: City,
+    State: State,
+    Country: Country,
+    Gender: Gender,
+    Address1: Address1,
+    Address2: Address2,
+    Phonenumber: Phonenumber
+  }).key;
+  firebase.database().ref('customer/'+Uid).update({
+  	 	Uid: Uid
+  	 });	
+  }
+  else
+  {
+  	// totalsup++;
+  	Uid = firebase.database().ref('service_provider/').push({
+    fname: Firstname,
+    lname: Lastname,
+    Email: Email,
+    dob: Dob,
+    area: Area,
+    city: City,
+    state: State,
+    country: Country,
+    gender: Gender,
+    address: Address1,
+    Address1: Address2,
+    phonenumber: Phonenumber,
+    price: Price,
+    service_name: Servicename
+    // service_name: 
+  }).key;
+  	 firebase.database().ref('service_provider/'+Uid).update({
+  	 	Uid: Uid
+  	 });
+     firebase.database().ref('problem/'+Uid).update({
+      dinner1: "0",
+      dinner2: "0",
+      dinner3: "0",
+      dinner4: "0",
+      dinner5: "0",
+      dinner6: "0",
+      dinner7: "0",
+      lunch1:  "0",
+      lunch2:  "0",
+      lunch3:  "0",
+      lunch4:  "0",
+      lunch5:  "0",
+      lunch6:  "0",
+      lunch7:  "0",
+      email: Email
+
+
+     })
+  }
+  //   firebase.database().ref('user/'+totaluser).set({
+  //   Email: Email,
+  //   Password: Password,
+  //   Type: Type,
+  //   No: totaluser+""
+  // });
+  // firebase.database().ref('customer/').update({
+  //   total: total+""
+  // });
+}
+  
+</script>
+
+</body>
+</html>
