@@ -35,6 +35,7 @@
 
 <div class="section white">
  <h1 class="center" style="font-family:vardana">Login Form</h1>
+   
     <div class="row container cardview input-field" >
    
       <input id="Email" type="email" class="validate">
@@ -45,7 +46,7 @@
         <label for="Password">password</label>
 
         <h6 class="right"><a href="forgotpassword.html">Forgot Password?</a></h6><br>
-        <button class="btn waves-effect waves-light container cardview centre" type="submit" name="action" onclick="login()">Submit	</button>
+        <button class="btn waves-effect waves-light container cardview centre" type="submit" name="action" onclick="login()" type="button">Submit	</button>
     </div>
 	  <div class="row container cardview input-field" >
 	        <h6 class="right"><a href="register.html">New here? Click here to register.</a></h6>
@@ -83,9 +84,9 @@
 	$(document).ready(function(){
       $('.parallax').parallax();
     });
-
 </script>
-<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
 <script>
   // Initialize Firebase
   var config = {
@@ -101,19 +102,15 @@
 
 
 <script type="text/javascript">
-
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
- //  window.open("edit_menu.html","_self");
-
+  window.open("edit_menu.html","_self");
   } else {
   
     // No user is signed in.
   }
 });
-
-
 $("#Email").focus();
 var UserEmail;
 function login()
@@ -141,10 +138,8 @@ firebase.auth().onAuthStateChanged(function(user) {
     // ...
   }
 });
-
  firebase.database().ref('service_provider').orderByChild("Email").equalTo(UserEmail).on("value", function(snapshot) {
     if(snapshot.val()){
-
        window.open("sp_home.html","_self");
     snapshot.forEach(function(child) {
       var value = child.val()
@@ -156,8 +151,6 @@ firebase.auth().onAuthStateChanged(function(user) {
     window.open("edit_menu.html","_self");
   }
 });
-
-
    // window.open("sp.html","_self");
   }).catch(function(error) {
   // Handle Errors here.
