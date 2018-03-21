@@ -16,6 +16,9 @@
     .collapsible-body{
       padding-top: 0px
     }
+    /*.clr:hover{
+      background: #48a79a;
+    }*/
   </style>
 </head>
 <body>
@@ -27,7 +30,7 @@
 
 
 <nav style="opacity: 0.8;height:90px">
-    <div class="nav-wrapper " style="background: #48a79a">
+    <div class="nav-wrapper " style="background: #5cb7ae">
       <div href="#" class="brand-logo" style="margin-left:8%;display: block;font-size: 50px;font-family: 'Bubblegum Sans', cursive;">Eaters'Stop</div>
       <span style="font-size: 15px;margin-left: 12%;top: 40px;position: absolute;font-family: cursive;">Best Food Collection</span>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -70,7 +73,10 @@
      	<i class="material-icons right">send</i>
   	</button>
 
+    
+
 	</div>
+  
 
 	<table class="container responsive-table centered" style="margin-bottom: 30px; border:1px solid #AAA" >
         <thead>
@@ -92,6 +98,11 @@
          
         </tbody>
       </table>
+<!-- style="background: #48a79a !important;" -->
+   <div align="right"  style="margin-right: 15%;  ">
+    <a href="https://instamojo.com/@EatersStop?data_name=Jerry+Seinfeld&data_readonly=data_name&data_amount=1000&data_readonly=data_amount"  rel="im-checkout" data-behaviour="link" data-style="flat" data-text="Pay Amount" style="background:#48a79a "></a>
+    <script src="https://js.instamojo.com/v1/button.js"></script>
+   </div>
 
 
   <!-- footer -->
@@ -255,7 +266,30 @@ function logout() {
   // body...
 }
 
+// var Insta = require('instamojo-nodejs');
+
 </script>
 
+<!-- <script src="https://cdn.jsdelivr.net/npm/instamojo-node@1.0.1/lib.min.js"></script>
+<script>
+  // Instamojo.open("https://instamojo.com/@ayushya"); 
+</script>
+ <script src="https://js.instamojo.com/v1/checkout.js"></script> -->
+<script type="text/javascript">
+  mojo = Instamojo('491b46ca15b46ec63390d42f74fca8b7', 'c9b82cef6c4821e8de742d9aeac715ef', 'https://test.instamojo.com/api/1.1/');
+  var payload = {
+  purpose: 'FIFA 16',
+  amount: '2500',
+  phone: '9999999999',
+  buyer_name: 'John Doe',
+  redirect_url: 'http://www.example.com/redirect/',
+  send_email: true,
+  webhook: 'http://www.example.com/webhook/',
+  send_sms: true,
+  email: 'foo@example.com',
+  allow_repeated_payments: false};
+ mojo.createRequest(payload);
+  
+</script>
 </body>
 </html>

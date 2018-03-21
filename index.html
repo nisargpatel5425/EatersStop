@@ -16,7 +16,7 @@
 <div class="parallax-container" style="height: 450px">
   
    <nav style="opacity: 0.9;margin-top: 0px;height: 22%">
-    <div class="nav-wrapper" style="background: #41a79a">
+    <div class="nav-wrapper" style="background: #5cb7ae">
       <!--  -->
       <div href="#" class="brand-logo" style="margin-left:8%;display: block;font-size: 50px;font-family: 'Bubblegum Sans', cursive;">Eaters'Stop</div>
       <span style="font-size: 15px;margin-left: 13%;top: 40px;position: absolute;font-family: cursive;">Best tiffin services</span>
@@ -102,16 +102,19 @@
 
 
 <script type="text/javascript">
-firebase.auth().onAuthStateChanged(function(user) {
-  if (user) {
-    // User is signed in.
-  window.open("edit_menu.html","_self");
-  } else {
+// firebase.auth().onAuthStateChanged(function(user) {
+//   if (user) {
+//     // User is signed in.
+//   window.open("edit_menu.html","_self");
+//   } else {
   
-    // No user is signed in.
-  }
-});
-$("#Email").focus();
+//     // No user is signed in.
+//   }
+// });
+// $("#Email").focus();
+$("#Password").focus();
+// $("#Email").focus();
+
 var UserEmail;
 function login()
 {
@@ -138,13 +141,15 @@ firebase.auth().onAuthStateChanged(function(user) {
     // ...
   }
 });
+
  firebase.database().ref('service_provider').orderByChild("Email").equalTo(UserEmail).on("value", function(snapshot) {
+ 	
     if(snapshot.val()){
        window.open("sp_home.html","_self");
     snapshot.forEach(function(child) {
-      var value = child.val()
+      // var value = child.val()
      // alert(value.Email);
-     window.open("sp_home.html","_self");
+     // window.open("sp_home.html","_self");
           });
   }
   else{

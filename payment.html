@@ -6,9 +6,6 @@
   <title>Home</title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-  
-
-
   <style type="text/css">
     .cardview{
       width: 40%;
@@ -19,64 +16,6 @@
     .collapsible-body{
       padding-top: 0px
     }
-    #shape-change{
-       width: 330px;
-       height: 330px;
-       background-color: #f0f0f0;
-       color: #000;
-       margin-top: 2%;
-       margin-bottom: 2%;
-
-  }
-  .col{
-    text-align: center;
-  }
-
-    a:hover{
-      color: #fff;
-
-    }
-
-    #shape-change:hover{
-       /*width: 256px;*/
-      /*height: 384;*/
-      border-radius: 50%;
-      background: #5cb7ae;
-       margin-top: 2%;
-       margin-bottom: 2%;
-
-       color: #fff;
-
-       animation-name: circle; 
-       animation-delay: 0s;
-       animation-duration: 0.5s;
-      
-    }
-    @-webkit-keyframes circle {
-    from {border-radius: 0px;}
-    to {border-radius: 200px;}
-}
-
-/* Standard syntax */
-@keyframes circle {
-    from {border-radius: 0px;}
-    to {border-radius: 200px;}
-}
-
-.dis
-{
-  margin-left:5% !important;
-}
-@media only screen and (max-width: 600px){
-.dis {
-    margin-left: 0px !important;
-}
-#shape-change{
-  width: 100%;
-  height: 267px;
-}
-}
- 
   </style>
 </head>
 <body>
@@ -95,32 +34,64 @@
 
         <li><a onclick="testJS()">Profile</a></li>
          <li><a href="edit_menu.html">My Orders</a></li>
-        <li><a  href="invoice.html">Invoice</a></li>
+        <li><a href="invoice.html">Invoice</a></li>
         <li><a id="area2" href="sp_list.html"></a></li>
         <li id="fname"></li>
         <li><a onclick="logout()">Logout</a></li>
       </ul>
 
       <ul id="slide-out" class="side-nav">
-      
-         <li><a onclick="testJS()">Profile</a></li>
-         <li><a href="edit_menu.html">My Orders</a></li>
-        <li><a  href="invoice.html">Invoice</a></li>
+        <li><a onclick="testJS()">Profile</a></li>
+        <li><a href="edit_menu.html">My Orders</a></li>
+        <li><a href="invoice.html">Invoice</a></li>
         <li><a id="area2" href="sp_list.html"></a></li>
         <li id="fname"></li>
         <li><a onclick="logout()">Logout</a></li>
-  </ul>
+      </ul>
+
   <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
   </nav>
-   <center></center>
+  
+	<div class="container row" style="margin-top: 30px; margin-bottom: 30px;">  
+	  <div class="input-field col s4">
+	    <input id="date_from" class="datepicker" type="text" class="validate" pattern="\d{1,2}/\d{1,2}/\d{4}">
+        <label for="date_from">Select Date From</label>
+	  </div>
 
-<div class="container row" id="list_manage" style="width: 90% ">
+	 
 
-  <!-- <div class="row container" id="list_manage" style="margin-top: 5%;"> -->
-  <h2 class="header">Service Provider List</h2>
+	  <div class="input-field col s4">
+	    <input id="date_upto" class="datepicker" type="text" class="validate" pattern="\d{1,2}/\d{1,2}/\d{4}">
+        <label for="date_upto">Select Date Upto</label>
+	  </div>
 
-  </div>
+	  <button class="btn waves-effect waves-light col s2  black-text0" style="margin-left: 90px;  margin-top: 15px;" type="submit" name="action" onclick="date_retrieve()">Submit
+     	<i class="material-icons right">send</i>
+  	</button>
+
+	</div>
+
+	<table class="container responsive-table centered" style="margin-bottom: 30px; border:1px solid #AAA" >
+        <thead>
+          <tr style="border: 1px solid #AAA">
+              <th rowspan="2" style="border: 1px solid #AAA">Date</th>
+              <th colspan="2" style="border: 1px solid #AAA">Lunch</th>
+              <th colspan="2">Dinner</th>
+          </tr>
+
+          <tr>
+              <th style="border: 1px solid #AAA">No of tiffin</th>
+              <th style="border: 1px solid #AAA">Amount</th>
+              <th style="border: 1px solid #AAA">No of tiffin</th>
+              <th style="border: 1px solid #AAA">Amount</th>
+          </tr>
+        </thead>
+
+        <tbody id="manage">
+         
+        </tbody>
+      </table>
 
 
   <!-- footer -->
@@ -198,90 +169,80 @@ firebase.auth().onAuthStateChanged(function(user)
     // No user is signed in.
   }
 });
-
 function testJS() {
  
     var b = Uid;
-        url = 'profile.html?name=' + encodeURIComponent(b);
+    url = 'profile.html?name=' + encodeURIComponent(b);
 
     document.location.href = url;
 }
 
-function testJSP(E) {
- 
-    var b = E;
-        url = 'profile_sp.html?name=' + encodeURIComponent(b);
 
-    document.location.href = url;
-}
-
-var Area1;
-var Country;
 function profile_retrieve()
 {
-	// alert(userEmail);
   firebase.database().ref('customer/').orderByChild("Email").equalTo(userEmail).on("value", function(snapshot)
     {
-
         snapshot.forEach(function(child)
         {
-
            var obj = child.val();
            Uid = obj.Uid;
-           Area1 = obj.Area;
-           Country = obj.Country;
-// alert(Area1);
 
-          list_retrieve();
-          
-           
            $("#fname").html("Welcome "+obj.Firstname);
            $("#area2").html(obj.Area);
 
            
         });
     });
-
-  
-// alert(Uid);
-
 }
 
-function list_retrieve(){
-  firebase.database().ref('service_provider/').orderByChild("area").equalTo(Area1).on("value", function(snapshot)
-    {
+var mydate;
 
-        snapshot.forEach(function(child)
-        {
+function date_retrieve()
+{
+	From = $("#date_from").val();
+  Upto = $("#date_upto").val();
+  var mydate = new Date(From);
+  var mydate1 = new Date(Upto);
 
-           var obj = child.val();
-           var servicename = obj.service_name;
-           var email = obj.Email;
-           var Uid = obj.Uid;
-           
-        // $('#list_manage').append("<div class=\"col s4 m4\"><div class=\"card horizontal\"><div class=\"card-image\"><img src=\"https://lorempixel.com/100/190/nature/6\"></div><div class=\"card-stacked\"><div class=\"card-content\"><p>"+servicename+".</p></div><div class=\"card-action\"><a href=\"#\" onclick=\"testJSP('"+Uid+"')\">This is a link</a></div></div></div></div>");
 
-        // $('#list_manage').append("<div  id=\"shape-change\" class=\"col s3 m4 dis\" style=\"\"><div style=\"text-align: center; padding-top: 50%;\"><h5>"+servicename+"</h5><div><button class=\"btn waves-effect waves-light\" type=\"submit\" name=\"action\" onclick=\"testJSP('"+Uid+"')\">View Details<i class=\"material-icons right\">send</i></button></div></div></div>");
+  var str = mydate.getDate() + "/"+(mydate.getMonth()+1) +"/"+ mydate.getFullYear();
+  var str1 = mydate1.getDate() + "/"+(mydate1.getMonth()+1) +"/"+ mydate1.getFullYear();
+  var startTime = mydate.getTime();
+  var endTime = mydate1.getTime();
+  $('#manage').html("");
+    //alert(str);
+  for(loopTime = startTime; loopTime < endTime+1; loopTime += 86400000)
+  {
+      var loopDay=new Date(loopTime);
+      var str = loopDay.getDate() + "/"+(loopDay.getMonth()+1) +"/"+ loopDay.getFullYear();
+      
+      // alert(str);
+      firebase.database().ref('customer/'+Uid+'/deliverdtiffin/').orderByChild("date").equalTo(str).on("value", function(snapshot)
+      {
+          snapshot.forEach(function(child)
+          {
 
-        $('#list_manage').append("<div  id=\"shape-change\" class=\"col s3 m4 dis\" style=\"\"><div style=\"text-align: center; padding-top: 50%;\"><h5>"+servicename+"</h5><div style=\"text-align: center; padding-left: 30%;\"><a class=\"col \" onclick=\"testJSP('"+Uid+"')\">View Details</a></div></div></div>");
-     });
-  });
+    	      var obj = child.val();
+            // $("#fname").html("Welcome "+obj.date); 
+            var lunch = obj.lunch;
+            var dinner = obj.dinner;
+            
+            var x = 	obj.date; 
+            var lp = lunch.price;
+            var ln = lunch.number;
+            var l = lp*ln;
+            var dp = dinner.price;
+            var dn = dinner.number;
+            var d = dn*dp;
+
+            // alert(x);
+            // alert(dinner.price);
+
+             $('#manage').append( "<tr><td >"+obj.date+"</td><td>"+ln+"</td><td>"+l+"</td><td>"+dn+"</td><td>"+d+"</td></tr>");
+          });
+      }); 	
+  }  
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 function logout() {
 // alert("logout");
@@ -293,11 +254,6 @@ function logout() {
 });
   // body...
 }
-
-
-
-
-
 
 </script>
 
