@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>Home</title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <link href="css/star.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/star.css">
   <style type="text/css">
     .cardview{
       width: 40%;
@@ -41,31 +41,24 @@
 
 
 <nav style="opacity: 0.8;height:90px">
-    <div class="nav-wrapper " style="background: #5cb7ae">
+    <div class="nav-wrapper" style="background: #48a79a">
       <div href="#" class="brand-logo" style="margin-left:8%;display: block;font-size: 50px;font-family: 'Bubblegum Sans', cursive;">Eaters'Stop</div>
       <span style="font-size: 15px;margin-left: 12%;top: 40px;position: absolute;font-family: cursive;">Best Food Collection</span>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
 
         <li><a onclick="testJS()">Profile</a></li>
-         <li><a href="edit_menu.html">My Orders</a></li>
-        <li><a href="invoice.html">Invoice</a></li>
-        <li><a id="area2" href="sp_list.html"></a></li>
-        
-        <!-- <li><a id="area"></a></li> -->
-        <!-- <li id="emailname"<li id="fname"></li>></li> -->
+        <li><a id="home" href="sp_home.html">Menu</a></li>
+        <li><a id="invoice" href="invoice_sp.html">Invoice</a></li>       
+        <li><a id="area" ></a></li>
         <li id="fname"></li>
         <li><a onclick="logout()">Logout</a></li>
       </ul>
       <ul id="slide-out" class="side-nav">
       
-        <!-- <li><a href="badges.html">Pay</a></li> -->
         <li><a onclick="testJS()">Profile</a></li>
-        <li><a href="edit_menu.html">My Orders</a></li>
-        <li><a href="invoice.html">Invoice</a></li>
-        <li><a id="area2" href="sp_list.html"></a></li>
-
-        <!-- <li><a id="area"></a></li> -->
-        <!-- <li id="emailname"></li> -->
+        <li><a href="sp_home.html">Menu</a></li>
+        <li><a href="invoice_sp.html">Invoice</a></li>
+        <li><a id="area" href="sp_list.html" ></a></li>
         <li id="fname"></li>
 
         <li><a onclick="logout()">Logout</a></li>
@@ -74,12 +67,14 @@
     </div>
   </nav>
 
-<div class="row card" style="margin-top: 3%;margin-left:5%;margin-right: 5%; margin-bottom: 3%;box-shadow: 3px 3px 10px 1px;">
+
+
+  <div class="row card" style="margin-top: 2%;margin-left:5%;margin-right: 5%;box-shadow: 3px 3px 10px 1px;">
         <div class="col s6 m6 center" style="margin:5px;background-color: #f4f7f9">
           <!-- <img src="images/d.png" width="30%" height="30%" style="margin-top: 4%;"> -->
           <div id="profileImage"></div>
 
-          <div class="card-title " id="servicename" style="margin-top: 10px;margin-bottom: 10%">Service Provider</div>
+          <div class="card-title " id="servicename" style="margin-top: 10px;margin-bottom: 10%">Fetching Name</div>
         </div>
         <div class="col s6 m5">
           <div class=" "> 
@@ -103,8 +98,8 @@
             
           </tr>
           <tr>
-            <td>Area</td>
-            <td id="area1"></td>
+            <td>Firstname</td>
+            <td id="Firstname"></td>
             
           </tr>
           <tr>
@@ -126,43 +121,25 @@
             
           </div>
 
-<!-- <div class="row container"><div class="col s10"><div class="input-field"><input id="comment" type="text" class="validate"><label for="comment">Write your Comment</label></div></div><div><button class="btn waves-effect waves-light col s2" type="submit" name="action" style="margin-top: 21px;" onclick="writeComment()">Submit<i class="material-icons right">send</i></button></div></div></div> -->
 
-<!-- <div class=" " style="margin-top: 4%;margin-left:5%;margin-right: 5%;box-shadow: 3px 3px 10px 1px;padding: 20px;margin-bottom: 4%">
-  <div>
-    <section class='rating-widget'>
-      <div class='rating-stars text-center'>
-        <ul id='stars'>
-          <li class='star' title='Poor' data-value='1'>
-            <i class='fa fa-star fa-fw'></i>
-          </li>
-          <li class='star' title='Fair' data-value='2'>
-            <i class='fa fa-star fa-fw'></i>
-          </li>
-          <li class='star' title='Good' data-value='3'>
-            <i class='fa fa-star fa-fw'></i>
-          </li>
-          <li class='star' title='Excellent' data-value='4'>
-            <i class='fa fa-star fa-fw'></i>
-          </li>
-          <li class='star' title='WOW!!!' data-value='5'>
-            <i class='fa fa-star fa-fw'></i>
-          </li>
-        </ul>
-      </div>
-    </section>
-</div> -->
+          <!-- <div id="trial"> -->
+          
 
-  <!-- <div class="row container"><div class="col s10"><div class="input-field"><input id="comment" type="text" class="validate"><label for="comment">Write your Comment</label></div></div><div><button class="btn waves-effect waves-light col s2" type="submit" name="action" style="margin-top: 21px;" onclick="writeComment()">Submit<i class="material-icons right">send</i></button></div></div>
+            <!-- </div> -->
 
- <h3 style="padding-bottom: 10px;margin-bottom: 10px; ">Comments</h3>
- <div id="manage_comment" class="">
-  </div> 
-  </div> -->
+<!-- 
+          <div class=" " style="margin-top: 4%;margin-left:5%;margin-right: 5%;box-shadow: 3px 3px 10px 1px;padding: 20px;margin-bottom: 4%">
 
+            
 
+              <div id="manage_comment" class="">
+                  <h3 style="padding-bottom: 10px;margin-bottom: 10px; ">Comments</h3>
+                  </div>
+                </div> -->
+                  <div id="commentar"></div>
+  
   <!-- footer -->
-    <footer class="page-footer " style="background: #5cb7ae">
+    <footer class="page-footer " style="background: #48a79a">
           <div class="container">
             <div class="row">
               <div class="col l4 offset-l2 s12">
@@ -174,17 +151,13 @@
               </div>
             </div>
           </div>
-          <div class="footer-copyright">
-            <div class="container">
-            <!-- © 2014 Copyright Text -->
-            </div>
-          </div>
         </footer>
       
 
 
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <script type="text/javascript" src="js/star.js"></script>
   <script type="text/javascript">
   $(document).ready(function(){
       $('select').material_select();  //dropdown
@@ -213,7 +186,6 @@
 <!-- Welcome user firebase -->
 <script type="text/javascript">
 var userEmail;
-var userUid;
 firebase.auth().onAuthStateChanged(function(user)
  {
   if (user) {
@@ -221,13 +193,14 @@ firebase.auth().onAuthStateChanged(function(user)
     var user = firebase.auth().currentUser;
     userEmail = user.email;
     setname();
-    comment_retrieve();
-    // $("#emailname").html("Welcome "+user.email);
+    comment_retrieve();    // $("#emailname").html("Welcome "+user.email);
    // profile_retrieve();
   } else {
     window.open("index.html","_self");
     // No user is signed in.
   }
+
+  // comm();
 });
 
 window.onload = function () {
@@ -260,20 +233,26 @@ function setname() {
         {
 
            var obj = child.val();
-           // Uid = obj.Uid;
-          userUid = obj.Uid;
+           Uid = obj.Uid;
+
            
-           $("#fname").html("Welcome "+obj.Firstname);
            
         });
     });
 }
 
+
+// function comm() {
+//   $('#trial').html("<div class=\"row container\"><div class=\"col s10\"><div class=\"input-field\"><input id=\"comment\" type=\"text\" class=\"validate\"><label for=\"comment\">Write your Comment</label></div></div><div><button class=\"btn waves-effect waves-light col s2\" type=\"submit\" name=\"action\" style=\"margin-top: 21px;\" onclick=\"writeComment()\">Submit<i class=\"material-icons right\">send</i></button></div></div></div><div><section class='rating-widget'><div class='rating-stars text-center'><ul id='stars'><li class='star' title='Poor'data-value='1'><i class='fa fa-star fa-fw'></i></li><li class='star' title='Fair' data-value='2'><i class='fa fa-star fa-fw'></i></li><li class='star' title='Good' data-value='3'><i class='fa fa-star fa-fw'></i></li><li class='star' title='Excellent' data-value='4'><i class='fa fa-star fa-fw'></i></li><li class='star' title='WOW!!!' data-value='5'><i class='fa fa-star fa-fw'></i></li></ul></div></section></div>");
+ 
+// }
+
 function comment_retrieve() {
   // alert(Uid);
+  
   firebase.database().ref('service_provider/'+Uid+'/comments/').on("value", function(snapshot)
     {
-      $('#manage_comment').html("");
+      $('#commentar').html("<div class=\" \" style=\"margin-top: 4%;margin-left:5%;margin-right: 5%;box-shadow: 3px 3px 10px 1px;padding: 20px;margin-bottom: 4%\"><h3 style=\"padding-bottom: 10px;margin-bottom: 10px; \">Comments</h3><div id=\"manage_comment\" class=\"\"></div></div>")
         snapshot.forEach(function(child)
         {
 
@@ -287,7 +266,7 @@ function comment_retrieve() {
            //alert(custUid);
            var Firstname =  obj.Firstname;
 
-          $('#manage_comment').append("<div class=\"row \" style=\"border-bottom:2px solid #e4e2e2; padding-bottom: 10px \"><div class=\"col s1\" style=\"display: inline-block;\"><img src=\"images/d.png\" width=\"50px\"></div><div class=\"col s10 m8\" ><span class=\"card-title\" style=\"font-size: 20px\">"+comment+"</span><div style=\"padding-left: 5px;color: #666699\">"+Firstname+"</div></div></div>");
+          $('#manage_comment').append("<div class=\"row \" style=\"border-bottom:2px solid #e4e2e2; padding-bottom: 10px \"><div class=\"col s1\" style=\"display: inline-block;\"><img src=\"images/d.png\" width=\"50px\"></div><div class=\"col s10 m8\" ><span class=\"card-title\" style=\"font-size: 20px\">"+comment+"</span><div style=\"padding-left: 5px;color: #666699\">"+Firstname+" (rating:"+rating+"/5)</div></div></div>");
             });
 
 
@@ -300,78 +279,51 @@ function comment_retrieve() {
 });
 }
 
-var ratingValue=0;
+
 function writeComment() {
-    comment = $("#comment").val();
-    if(ratingValue==0)
-    {
-      alert("Please select Rating value");
-    }
-    else
-    {
-      if(comment=="")
-      {
-        alert("Enter the comment");
-      }
-      else
-      {
-        firebase.database().ref('service_provider/'+Uid+'/comments/').push({
-      
-      
-     comment: comment,
-     Uid: userUid,
-     rating: ratingValue
-     });
-      }
-     $("#comment").val("");
-
-    var stars = $('#stars li').parent().children('li.star');
-    for (i = 0; i < stars.length; i++) {
-      $(stars[i]).removeClass('selected');
-    }
-    ratingValue=0;
-    
-
-    }
-
-     // alert(ratingValue);  
+  firebase.database().ref('service_provider/'+Uid).update({
+     Comment: comment
+     });  
 }
-
-
 
 
 
 function profile_retrieve()
 {
-
   firebase.database().ref('service_provider/').orderByChild("Uid").equalTo(Uid).on("value", function(snapshot)
     {
         if(snapshot.val())
         {
+          pavtar();
+          //$("#area").attr("href", ""); 
+          comment_retrieve()
         snapshot.forEach(function(child)
         {
 
            var obj = child.val();
-           // var servicename = obj.service_name;
-           // var emailname = obj.Email;
-           // var address = obj.address;
-           // var area = obj.area;
-           // var dob = obj.dob;
-           // alert(emailname);
+           
            $("#servicename").html(obj.service_name);
            $("#emailname1").html(obj.Email);
            $("#address").html(obj.address);
-           $("#area2").html(obj.area);
-           $("#area1").html(obj.area);
+           $("#area").html(obj.area);
+           $("#Firstname").html(obj.fname);
            $("#dob").html(obj.dob);
+
+           $("#fname").html("Welcome "+obj.fname);
+
            
         });  
         }
         else{
+          avatar();
 
+          $('#commentar').html("");
           firebase.database().ref('customer/').orderByChild("Uid").equalTo(Uid).on("value", function(snapshot)
     {
-        
+      $("#area").attr("href", "sp_list.html");
+      $("#invoice").attr("href", "invoice.html");
+      $("#home").attr("href", "edit_menu.html");
+      $("#home").html("My Orders")  
         snapshot.forEach(function(child)
         {
 
@@ -386,7 +338,7 @@ function profile_retrieve()
            $("#emailname1").html(obj.Email);
            $("#address").html(obj.Address1);
            $("#area").html(obj.Area);
-           $("#area1").html(obj.Area);
+           $("#Firstname").html(obj.Firstname);
            $("#dob").html(obj.Dob);
            
         });  
@@ -396,12 +348,12 @@ function profile_retrieve()
         }
         
     });
-  avatar();
+
 }
 
 function avatar() {
 
-  
+
   firebase.database().ref('customer/').orderByChild("Uid").equalTo(Uid).on("value", function(snapshot)
     {
         
@@ -409,7 +361,7 @@ function avatar() {
         {
 
            var obj = child.val();
-           
+
            var Firstname = obj.Firstname;
            var Lastname = obj.Lastname;
            var initials = Firstname.charAt(0)+""+Lastname.charAt(0);
@@ -423,7 +375,28 @@ function avatar() {
 
 }
 
+function pavtar() {
 
+  firebase.database().ref('service_provider/').orderByChild("Uid").equalTo(Uid).on("value", function(snapshot)
+    {
+        
+        snapshot.forEach(function(child)
+        {
+
+           var obj = child.val();
+
+           var Firstname = obj.fname;
+           var Lastname = obj.lname;
+           var initials = Firstname.charAt(0)+""+Lastname.charAt(0);
+           document.getElementById("profileImage").innerHTML = initials;
+           // alert(Firstname);
+           
+        });  
+        
+        
+    });
+
+}
 
 
 
@@ -445,7 +418,6 @@ function logout() {
 
 
 </script>
-<script src="js/star.js"></script>
 
 </body>
 </html>

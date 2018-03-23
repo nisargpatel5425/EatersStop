@@ -181,21 +181,21 @@
 var userEmail;
 var usertreeid;
 var Uid;
-// firebase.auth().onAuthStateChanged(function(user)
-//  {
-//   if (user) {
-//     // User is signed in.
-//     var user = firebase.auth().currentUser;
-//     userEmail = user.email;
-//     firebase.database().ref('service_provider/').orderByChild("Email").equalTo(userEmail).on("value", function(snapshot) {
-//     snapshot.forEach(function(child) {
-//         var value = child.val();
+firebase.auth().onAuthStateChanged(function(user)
+ {
+  if (user) {
+    // User is signed in.
+    var user = firebase.auth().currentUser;
+    userEmail = user.email;
+    firebase.database().ref('service_provider/').orderByChild("Email").equalTo(userEmail).on("value", function(snapshot) {
+    snapshot.forEach(function(child) {
+        var value = child.val();
 
-//         usertreeid = value.Uid;
-//         Uid = usertreeid;
-//         profile_retrieve();
-//     });
-//   });
+        usertreeid = value.Uid;
+        Uid = usertreeid;
+        profile_retrieve();
+    });
+  });
     $("#emailname").html("Welcome "+user.email);
 
 
@@ -222,7 +222,7 @@ function clean()
 function testJS() {
  
     var b = Uid;
-        url = 'profile_sp.html?name=' + encodeURIComponent(b);
+        url = 'profile.html?name=' + encodeURIComponent(b);
 
     document.location.href = url;
 }

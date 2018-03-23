@@ -3,21 +3,21 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-	<title>Register</title>
-	<link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-	<style type="text/css">
-		.cardview{
-			width: 30%;
-		}
-	</style>
+  <title>Register</title>
+  <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <style type="text/css">
+    .cardview{
+      width: 30%;
+    }
+  </style>
 </head>
 <body>
  
 <!-- parallax -->
 <div class="parallax-container" style="height: 450px">
-	
-	 <nav style="opacity: 0.9;margin-top: 0px;height: 22%">
+  
+   <nav style="opacity: 0.9;margin-top: 0px;height: 22%">
     <div class="nav-wrapper " style="background: #cc3c27">
       
       <div href="#" class="brand-logo" style="margin-left:8%;display: block;font-size: 50px;font-family: 'Bubblegum Sans', cursive;">Eaters'Stop</div>
@@ -77,7 +77,7 @@
     </div>
 
     <div class="row container cardview demo" >
-    	<form id="gender">
+      <form id="gender">
       <input class="with-gap" name="Gender" value="Male" id="Gender1" type="radio" class="validate">
         <label for="Gender1">Male</label>
       <input class="with-gap" name="Gender" value="Female" id="Gender2" type="radio" class="validate">
@@ -193,12 +193,12 @@
  <div class="row container cardview input-field" >
         <h6 class="right"><a href="index.html">Already Registerd? Login</a></h6>
         <button class="btn waves-effect waves-light container cardview centre" type="submit" name="action" onclick="signup()">Submit
-    	
+      
   </button>
     </div>
   </form>
 
-	
+  
 
 
 
@@ -228,10 +228,14 @@
       
 
 
-	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-	<script type="text/javascript">
-	$(document).ready(function(){
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+  $(document).ready(function(){
    
       $('.parallax').parallax();
       $('input#Phonenumber').characterCounter();
@@ -305,11 +309,11 @@ $("#Phonenumber").on("keydown", function (e) {
     }
 });
 function check() {
-	// body...
-	key=firebase.database().ref('customer/').push({
-	    total: "8"+""
-	  }).key;
-	alert(key);
+  // body...
+  key=firebase.database().ref('customer/').push({
+      total: "8"+""
+    }).key;
+  alert(key);
 }
 
 
@@ -375,7 +379,7 @@ function signup()
   }
 
   
-}	//sign up close
+} //sign up close
 
 
 //code to understand
@@ -419,7 +423,7 @@ function writeUserData(){
 
 
 //session maintain
-  firebase.auth().onAuthStateChanged(function(user) {	
+  firebase.auth().onAuthStateChanged(function(user) { 
   if (user) {
     // User is signed in.
     var displayName = user.displayName;
@@ -446,7 +450,7 @@ var Uid;
   //alert("database");
   if(Type=="Customer")
   {
-  	// totalcust++;
+    // totalcust++;
   Uid = firebase.database().ref('customer/').push({
     Firstname: Firstname,
     Lastname: Lastname,
@@ -463,13 +467,13 @@ var Uid;
     Phonenumber: Phonenumber
   }).key;
   firebase.database().ref('customer/'+Uid).update({
-  	 	Uid: Uid
-  	 });	
+      Uid: Uid
+     });  
   }
   else
   {
-  	// totalsup++;
-  	Uid = firebase.database().ref('service_provider/').push({
+    // totalsup++;
+    Uid = firebase.database().ref('service_provider/').push({
     fname: Firstname,
     lname: Lastname,
     Email: Email,
@@ -486,9 +490,9 @@ var Uid;
     service_name: Servicename
     // service_name: 
   }).key;
-  	 firebase.database().ref('service_provider/'+Uid).update({
-  	 	Uid: Uid
-  	 });
+     firebase.database().ref('service_provider/'+Uid).update({
+      Uid: Uid
+     });
      firebase.database().ref('problem/'+Uid).update({
       dinner1: "0",
       dinner2: "0",

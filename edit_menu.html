@@ -16,13 +16,20 @@
     .collapsible-body{
       padding-top: 0px
     }
+    .tp:hover
+    {
+      color: red;
+      background-colors: red;
+    }
 	</style>
 </head>
-<body>
+<body >
 <!-- parallax -->
 
 <nav style="opacity: 0.8;height:90px">
+            
     <div class="nav-wrapper" style="background: #48a79a">
+      <!-- 48a79a -->
       <div href="#" class="brand-logo" style="margin-left:8%;display: block;font-size: 50px;font-family: 'Bubblegum Sans', cursive;">Eaters'Stop</div>
       <span style="font-size: 15px;margin-left: 12%;top: 40px;position: absolute;font-family: cursive;">Best Food Collection</span>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -43,14 +50,14 @@
         <li id="fname"></li>
         <li><a onclick="logout()">Logout</a></li>
   </ul>
-  <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+  <a href="#" data-activates="slide-out" class="button-collapse" ><i class="material-icons">menu</i></a>
     </div>
   </nav>
 
 
 
    
-  <table class="highlight container centered" style="margin-top: 40px; margin-bottom: 80px; box-shadow: 3px 3px 10px 1px;">
+  <table class="highlight container centered" style="margin-top: 40px; margin-bottom: 80px; box-shadow: 3px 3px 10px 1px;  >
         <thead>
           <tr>
               <th>Day</th>
@@ -60,7 +67,7 @@
         </thead>
 
         <tbody>
-          <tr>
+          <tr class="tp">
             <td>Monday</td>
             <td><a class="waves-effect waves-teal btn-flat grey lighten-2" onclick="show_dialog('1','lunch')" id="lunch1" >Select Provider</a><div class="row"><div class="switch col s4" style="margin-top: 5%;margin-left: 15%"><label><input class="" id="lunch1flag" type="checkbox" disabled ><span class="lever" ></span></label></div><div class="input-field col s3"><input placeholder="1" value="1" disabled id="lunch1no" type="text"><label for="no_tiffin">Tiffin Count</label></div> </div>
               
@@ -136,7 +143,7 @@
 
 
   <!-- footer -->
-    <footer class="page-footer "  style="background: #48a79a">
+    <!-- <footer class="page-footer "  style="background: #48a79a">
           <div class="container">
             <div class="row">
               <div class="col l4 offset-l2 s12">
@@ -153,7 +160,7 @@
             © 2014 Copyright Text
             </div>
           </div>
-        </footer>
+        </footer> -->
       
 
 
