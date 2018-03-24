@@ -50,8 +50,8 @@
             <li><a href="#" data-nav-section="specialties">Why us</a></li>
             <li><a href="#" data-nav-section="events">About Us</a></li>
             <li><a href="#" data-nav-section="contact">Contact</a></li>
-            <li><a href="index.html" data-nav-section="login" >Login</a></li>
-            <li><a href="register.html" data-nav-section="signup">Signup</a></li>
+            <li><a href="index.html"  onclick="move_index();">Login</a></li>
+            <li><a href="/register.html" >Signup</a></li>
           </ul>
         </div>
       </div>
@@ -529,6 +529,9 @@ You can check out our customers reviews and feedbacks for different tiffin servi
       $(document).ready(function(){
          $('.carousel').carousel();
     });
+      function move_index(){
+        window.open("index.html","_self");
+      }
     </script>
 
   </body>

@@ -29,7 +29,7 @@
 
 
 
-<nav style="opacity: 0.8;height:90px">
+<!-- <nav style="opacity: 0.8;height:90px">
     <div class="nav-wrapper " style="background: #5cb7ae">
       <div href="#" class="brand-logo" style="margin-left:8%;display: block;font-size: 50px;font-family: 'Bubblegum Sans', cursive;">Eaters'Stop</div>
       <span style="font-size: 15px;margin-left: 12%;top: 40px;position: absolute;font-family: cursive;">Best Food Collection</span>
@@ -54,7 +54,43 @@
 
   <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
-  </nav>
+  </nav> -->
+  <nav class="navbar white black-text navbar-default navbar-fixed-top probootstrap-navbar">
+      <div class="container">
+        
+
+        <div id="navbar-collapse" class="navbar-collapse collapse">
+          <ul class="nav  navbar-nav black-text navbar-left">
+              <li ><a class="black-text" style="font-size: 25px;">Eaters' Stop</a></li>
+          </ul>
+          <ul class="nav black-text navbar-nav navbar-right" style="float: right;">
+
+            <!-- <li class="active"><a href="#" data-nav-section="welcome">Welcome</a></li>
+            <li><a href="#" data-nav-section="Works">How it Works</a></li>
+
+            <li><a href="#" data-nav-section="specialties">Why us</a></li>
+            <li><a href="#" data-nav-section="events">About Us</a></li>
+            <li><a href="#" data-nav-section="contact">Contact</a></li> -->
+            <li><a class="black-text" onclick="testJS()"  data-nav-section="login" >Profile</a></li>
+            <li><a class="black-text" href="edit_menu.html"  data-nav-section="login" >My Orders</a></li>
+
+            <li><a class="black-text" id="area2" href="sp_list.html"></a></li>
+
+            <li><a class="black-text" href="invoice.html" onclick="invoice.html" data-nav-section="login" >Invoice</a></li>
+            
+            <li><a class="black-text" id="fname" ></a></li>
+
+            <li><a class="black-text" onclick="logout()">Logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="parallax-container" style="height: 450px">
+  <div class="parallax"><img src="images/5.jpg"></div>
+  </div>
+</div>
+
   
 	<div class="container row" style="margin-top: 30px; margin-bottom: 30px;">  
 	  <div class="input-field col s4">
@@ -69,9 +105,13 @@
         <label for="date_upto">Select Date Upto</label>
 	  </div>
 
-	  <button class="btn waves-effect waves-light col s2  black-text0" style="margin-left: 90px;  margin-top: 15px;" type="submit" name="action" onclick="date_retrieve()">Submit
+	 <!--  <button class="btn waves-effect waves-light col s2  black-text0" style="margin-left: 90px;  margin-top: 15px; background-color: #FFA33E;" type="submit" name="action" onclick="date_retrieve()">Submit
      	<i class="material-icons right">send</i>
-  	</button>
+  	</button> -->
+
+    <div class="form-group">
+                <input style="margin-left: 90px;  margin-top: 15px; background-color: #FFA33E;" type="button" name="action" value="Submit" onclick="date_retrieve()" class="btn btn-primary btn-lg">
+              </div>
 
     
 
@@ -99,8 +139,8 @@
         </tbody>
       </table>
 <!-- style="background: #48a79a !important;" -->
-   <div align="right"  style="margin-right: 15%;  ">
-    <a href="https://instamojo.com/@EatersStop?data_name=Jerry+Seinfeld&data_readonly=data_name&data_amount=1000&data_readonly=data_amount"  rel="im-checkout" data-behaviour="link" data-style="flat" data-text="Pay Amount" style="background:#48a79a "></a>
+   <div align="right"  style="margin-right: 15%; ">
+    <a  href="https://instamojo.com/@EatersStop?data_name=Jerry+Seinfeld&data_readonly=data_name&data_amount=1000&data_readonly=data_amount"  rel="im-checkout" data-behaviour="link" data-style="flat"  data-text="Pay Amount" style="background:#48a79a "></a>
     <script src="https://js.instamojo.com/v1/button.js"></script>
    </div>
 
@@ -121,9 +161,50 @@
           <div class="footer-copyright">
             <div class="container">
             <!-- © 2014 Copyright Text -->
-            </div>
+            <!-- </div>
           </div>
         </footer> -->
+
+        <footer class="page-footer black"  >
+          <div class="container">
+            <div class="row">
+              <div class="col l4 offset-l2 s12">
+               <div class="probootstrap-footer-widget">
+              <h3>Locations</h3>
+              <div class="row">
+                <div class="col-md-6">
+                  <p> A 303 radhey residency
+Rajlaxmi society
+Nr. Divyalok bunglows<br>
+Samta laxmipura road
+Vadodara  <br> New York NY 10016</p>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+          <div class="probootstrap-footer-widget">
+              <h3>Open Hours</h3>
+              <div class="row">
+                <div class="col-md-4">
+                  <p>Monday - Sunday (Lunch)<br>  Before 03:00pm</p>
+                </div>
+                <div class="col-md-4">
+                  <p>Monday - Sunday (Dinner)<br> After 03:00pm</p>
+                </div>
+                <div class="col-md-4">
+                  <p>Available for <br> Email at eatersstop@gmail.com</p>
+                </div>
+              </div>
+            </div>
+              </div>
+            </div>
+          <!-- </div> -->
+          <div class="footer-copyright">
+            <div class="container">
+            
+          </div>
+        </footer>
       
 
 
@@ -131,6 +212,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
   <script type="text/javascript">
   $(document).ready(function(){
+      $('.parallax').parallax();
+
       $('select').material_select();  //dropdown
        $(".button-collapse").sideNav(); //nav-mobile
        $('.modal').modal();

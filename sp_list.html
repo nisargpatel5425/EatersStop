@@ -22,7 +22,7 @@
     #shape-change{
        width: 330px;
        height: 330px;
-       background-color: #f0f0f0;
+       background-color: #8b8e94;
        color: #000;
        margin-top: 2%;
        margin-bottom: 2%;
@@ -41,7 +41,7 @@
        /*width: 256px;*/
       /*height: 384;*/
       border-radius: 50%;
-      background: #5cb7ae;
+      background: #000000;
        margin-top: 2%;
        margin-bottom: 2%;
 
@@ -87,59 +87,91 @@
 
 
 
-<nav style="opacity: 0.8;height:90px">
-    <div class="nav-wrapper " style="background: #5cb7ae">
-      <div href="#" class="brand-logo" style="margin-left:8%;display: block;font-size: 50px;font-family: 'Bubblegum Sans', cursive;">Eaters'Stop</div>
-      <span style="font-size: 15px;margin-left: 12%;top: 40px;position: absolute;font-family: cursive;">Best Food Collection</span>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
 
-        <li><a onclick="testJS()">Profile</a></li>
-         <li><a href="edit_menu.html">My Orders</a></li>
-        <li><a  href="invoice.html">Invoice</a></li>
-        <li><a id="area2" href="sp_list.html"></a></li>
-        <li id="fname"></li>
-        <li><a onclick="logout()">Logout</a></li>
-      </ul>
+<nav class="navbar white black-text navbar-default navbar-fixed-top probootstrap-navbar">
+      <div class="container">
+        
 
-      <ul id="slide-out" class="side-nav">
-      
-         <li><a onclick="testJS()">Profile</a></li>
-         <li><a href="edit_menu.html">My Orders</a></li>
-        <li><a  href="invoice.html">Invoice</a></li>
-        <li><a id="area2" href="sp_list.html"></a></li>
-        <li id="fname"></li>
-        <li><a onclick="logout()">Logout</a></li>
-  </ul>
-  <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
-    </div>
-  </nav>
-   <center></center>
+        <div id="navbar-collapse" class="navbar-collapse collapse">
+          <ul class="nav  navbar-nav black-text navbar-left">
+              <li ><a class="black-text" style="font-size: 25px;">Eaters' Stop</a></li>
+          </ul>
+          <ul class="nav black-text navbar-nav navbar-right" style="float: right;">
+
+            <!-- <li class="active"><a href="#" data-nav-section="welcome">Welcome</a></li>
+            <li><a href="#" data-nav-section="Works">How it Works</a></li>
+
+            <li><a href="#" data-nav-section="specialties">Why us</a></li>
+            <li><a href="#" data-nav-section="events">About Us</a></li>
+            <li><a href="#" data-nav-section="contact">Contact</a></li> -->
+            <li><a class="black-text" onclick="testJS()"  data-nav-section="login" >Profile</a></li>
+            <li><a class="black-text" href="edit_menu.html"  data-nav-section="login" >My Orders</a></li>
+
+            <li><a class="black-text" id="area2" href="sp_list.html"></a></li>
+
+            <li><a class="black-text" href="index.html" onclick="invoice.html" data-nav-section="login" >Invoice</a></li>
+            
+            <li><a class="black-text" id="fname" ></a></li>
+
+            <li><a class="black-text" onclick="logout()">Logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="parallax-container" style="height: 450px">
+  <div class="parallax"><img src="images/5.jpg"></div>
+  </div>
+</div>
 
 <div class="container row" id="list_manage" style="width: 90% ">
 
   <!-- <div class="row container" id="list_manage" style="margin-top: 5%;"> -->
-  <h2 class="header">Service Provider List</h2>
+  <h2 class="header center">Service Provider List</h2>
+  <img src="images/t13.jpg">
 
   </div>
 
 
   <!-- footer -->
-    <footer class="page-footer " style="background: #48a79a">
+    <footer class="page-footer black"  >
           <div class="container">
             <div class="row">
               <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links</h5>
-                <ul>
-                  <li><a class="grey-text text-lighten-3" href="#!">Contact Us</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">About Us</a></li>
-                </ul>
+               <div class="probootstrap-footer-widget">
+              <h3>Locations</h3>
+              <div class="row">
+                <div class="col-md-6">
+                  <p> A 303 radhey residency
+Rajlaxmi society
+Nr. Divyalok bunglows<br>
+Samta laxmipura road
+Vadodara  <br> New York NY 10016</p>
+                </div>
+                
               </div>
             </div>
           </div>
+          <div class="probootstrap-footer-widget">
+              <h3>Open Hours</h3>
+              <div class="row">
+                <div class="col-md-4">
+                  <p>Monday - Sunday (Lunch)<br>  Before 03:00pm</p>
+                </div>
+                <div class="col-md-4">
+                  <p>Monday - Sunday (Dinner)<br> After 03:00pm</p>
+                </div>
+                <div class="col-md-4">
+                  <p>Available for <br> Email at eatersstop@gmail.com</p>
+                </div>
+              </div>
+            </div>
+              </div>
+            </div>
+          <!-- </div> -->
           <div class="footer-copyright">
             <div class="container">
-            <!-- © 2014 Copyright Text -->
-            </div>
+            
           </div>
         </footer>
       
@@ -149,6 +181,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
   <script type="text/javascript">
   $(document).ready(function(){
+      $('.parallax').parallax();
+
       $('select').material_select();  //dropdown
        $(".button-collapse").sideNav(); //nav-mobile
        $('.modal').modal();
